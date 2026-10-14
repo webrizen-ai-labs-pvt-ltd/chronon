@@ -1,0 +1,192 @@
+{
+  "slug": "japan",
+  "name": "Japan",
+  "kind": "country",
+  "country_code": "JP",
+  "country": "Japan",
+  "summary": "Seasonal, dashi-based cooking with rice at the centre, plus a deep street-food culture.",
+  "staples": [
+    "rice",
+    "dashi",
+    "soy sauce",
+    "miso",
+    "nori"
+  ],
+  "dishes": [
+    {
+      "slug": "nigiri-sushi",
+      "name": "Nigiri Sushi",
+      "local_name": "握り寿司",
+      "description": "Hand-pressed vinegared rice topped with sliced fish.",
+      "course": "main",
+      "diet": "pescatarian",
+      "spice_level": 0,
+      "price_level": 3,
+      "ingredients": [
+        "vinegared rice",
+        "raw fish",
+        "wasabi"
+      ],
+      "tags": [
+        "tokyo"
+      ]
+    },
+    {
+      "slug": "shoyu-ramen",
+      "name": "Shoyu Ramen",
+      "local_name": "醤油ラーメン",
+      "description": "Wheat noodles in soy-seasoned chicken or pork broth.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 1,
+      "price_level": 2,
+      "ingredients": [
+        "wheat noodles",
+        "soy-seasoned broth",
+        "chashu pork",
+        "egg",
+        "nori"
+      ],
+      "tags": [
+        "noodles"
+      ]
+    },
+    {
+      "slug": "tonkotsu-ramen",
+      "name": "Tonkotsu Ramen",
+      "local_name": "豚骨ラーメン",
+      "description": "Creamy pork-bone broth with thin noodles, from Fukuoka.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 1,
+      "price_level": 2,
+      "ingredients": [
+        "pork bone broth",
+        "thin noodles",
+        "chashu",
+        "kikurage"
+      ],
+      "tags": [
+        "fukuoka",
+        "noodles"
+      ]
+    },
+    {
+      "slug": "okonomiyaki",
+      "name": "Okonomiyaki",
+      "local_name": "お好み焼き",
+      "description": "Savoury cabbage pancake; Osaka mixes the batter, Hiroshima layers it with noodles.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "cabbage",
+        "flour batter",
+        "egg",
+        "pork belly",
+        "okonomi sauce",
+        "bonito flakes"
+      ],
+      "tags": [
+        "osaka",
+        "hiroshima"
+      ]
+    },
+    {
+      "slug": "takoyaki",
+      "name": "Takoyaki",
+      "local_name": "たこ焼き",
+      "description": "Octopus-filled batter balls from Osaka's street stalls.",
+      "course": "snack",
+      "diet": "pescatarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "batter",
+        "octopus",
+        "tenkasu",
+        "pickled ginger",
+        "bonito flakes"
+      ],
+      "tags": [
+        "street-food",
+        "osaka"
+      ]
+    },
+    {
+      "slug": "miso-soup",
+      "name": "Miso Soup",
+      "local_name": "味噌汁",
+      "description": "Everyday soup of miso dissolved in dashi.",
+      "course": "side",
+      "diet": "pescatarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "miso",
+        "dashi",
+        "tofu",
+        "wakame",
+        "spring onion"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "tempura",
+      "name": "Tempura",
+      "local_name": "天ぷら",
+      "description": "Seafood and vegetables in a thin, crisp batter.",
+      "course": "main",
+      "diet": "pescatarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "prawns",
+        "vegetables",
+        "light batter"
+      ],
+      "tags": [
+        "fried"
+      ]
+    },
+    {
+      "slug": "onigiri",
+      "name": "Onigiri",
+      "local_name": "おにぎり",
+      "description": "Rice balls wrapped in nori; Japan's grab-and-go lunch.",
+      "course": "snack",
+      "diet": "pescatarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "rice",
+        "nori",
+        "salted salmon",
+        "umeboshi"
+      ],
+      "tags": [
+        "lunch"
+      ]
+    },
+    {
+      "slug": "matcha",
+      "name": "Matcha",
+      "local_name": "抹茶",
+      "description": "Stone-ground green tea whisked to a froth.",
+      "course": "beverage",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "powdered green tea",
+        "hot water"
+      ],
+      "tags": [
+        "tea-ceremony"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+export const metadata = { title: "Limits & fair use" };
+
+# Limits & fair use
+
+<Lead>
+  Chronon is free, and it runs on Webrizen's own servers. Limits keep it fast and available for everyone.
+</Lead>
+
+## The limits
+
+| | Standard | Elevated |
+| --- | --- | --- |
+| Requests per minute | 60 | 300 |
+| Requests per month | 50,000 | 500,000 |
+| Active keys | 5 | 5 |
+
+Everyone starts on **Standard**. Limits apply per account, across all your keys. The per-minute limit is a sliding
+window; the monthly quota resets at 00:00 UTC on the 1st.
+
+Requests turned away by the per-minute limit don't count towards your monthly quota.
+
+## Reading your remaining budget
+
+Every authenticated response includes:
+
+| Header | Meaning |
+| --- | --- |
+| `X-RateLimit-Limit` | Requests allowed per minute |
+| `X-RateLimit-Remaining` | Requests left in the current minute |
+| `X-RateLimit-Reset` | Unix time (seconds) when the minute window frees up |
+| `X-Quota-Limit` | Requests allowed this month |
+| `X-Quota-Remaining` | Requests left this month |
+| `X-Quota-Reset` | Unix time (seconds) when the monthly quota resets |
+
+When you're over a limit you get `429` with a `Retry-After` header (in seconds):
+
+```json
+{
+  "error": {
+    "code": "rate_limited",
+    "message": "Limit is 60 requests per minute. Retry after the reset.",
+    "docs": "https://chronon.webrizen.com/docs/limits"
+  }
+}
+```
+
+## Being a good citizen
+
+- **Cache.** Dataset APIs like regional menus change rarely. Fetch once, keep it for hours.
+- **Back off.** On `429`, wait for `Retry-After` before retrying. Don't retry in a tight loop.
+- **One account per person or team.** Creating accounts to get around limits counts as abuse.
+
+## Fair use
+
+Accounts can be suspended, and all their keys stop working, for:
+
+- trying to get around the limits (multiple accounts, rotating IPs to guess keys),
+- traffic that looks like an attack on the service,
+- reselling access to Chronon as a paid product.
+
+A suspended account gets `403 account_suspended`.
+
+## Need more?
+
+Building something open-source, educational or non-profit that needs more than Standard?
+[Open an issue](https://github.com/webrizen/chronon/issues) describing the project and expected traffic, and we can
+move your account to **Elevated**.

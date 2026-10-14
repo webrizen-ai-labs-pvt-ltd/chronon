@@ -1,0 +1,185 @@
+{
+  "slug": "karnataka",
+  "name": "Karnataka",
+  "kind": "state",
+  "country_code": "IN",
+  "country": "India",
+  "summary": "Udupi temple cooking, Mangalorean coastal curries and Kodava pork from the hills of Coorg.",
+  "staples": [
+    "finger millet",
+    "rice",
+    "coconut",
+    "jaggery",
+    "byadgi chillies"
+  ],
+  "dishes": [
+    {
+      "slug": "bisi-bele-bath",
+      "name": "Bisi Bele Bath",
+      "local_name": "ಬಿಸಿ ಬೇಳೆ ಬಾತ್",
+      "description": "Hot rice-and-lentil one-pot meal with its own spice blend.",
+      "course": "rice",
+      "diet": "vegetarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "rice",
+        "toor dal",
+        "vegetables",
+        "tamarind",
+        "bisi bele bath powder",
+        "ghee"
+      ],
+      "tags": [
+        "one-pot"
+      ]
+    },
+    {
+      "slug": "mysore-masala-dosa",
+      "name": "Mysore Masala Dosa",
+      "local_name": "ಮೈಸೂರು ಮಸಾಲೆ ದೋಸೆ",
+      "description": "Dosa spread with fiery red chutney before the potato filling goes in.",
+      "course": "breakfast",
+      "diet": "vegetarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "dosa batter",
+        "red chutney",
+        "potato palya",
+        "butter"
+      ],
+      "tags": [
+        "fermented"
+      ]
+    },
+    {
+      "slug": "ragi-mudde",
+      "name": "Ragi Mudde",
+      "local_name": "ರಾಗಿ ಮುದ್ದೆ",
+      "description": "Finger-millet balls swallowed, not chewed, with saaru or bassaru.",
+      "course": "main",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "finger millet flour",
+        "water"
+      ],
+      "tags": [
+        "millet"
+      ]
+    },
+    {
+      "slug": "neer-dosa",
+      "name": "Neer Dosa",
+      "local_name": "ನೀರ್ ದೋಸೆ",
+      "description": "Paper-thin, unfermented rice crepes from coastal Karnataka.",
+      "course": "breakfast",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "rice",
+        "coconut"
+      ],
+      "tags": [
+        "mangalorean"
+      ]
+    },
+    {
+      "slug": "kori-rotti",
+      "name": "Kori Rotti",
+      "local_name": "ಕೋರಿ ರೊಟ್ಟಿ",
+      "description": "Mangalorean chicken curry poured over crisp rice wafers.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 3,
+      "price_level": 2,
+      "ingredients": [
+        "chicken",
+        "coconut",
+        "red chillies",
+        "crisp rice wafers"
+      ],
+      "tags": [
+        "mangalorean"
+      ]
+    },
+    {
+      "slug": "pandi-curry",
+      "name": "Pandi Curry",
+      "local_name": "ಪಂದಿ ಕರಿ",
+      "description": "Dark Coorg pork curry soured with kachampuli.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 3,
+      "price_level": 2,
+      "ingredients": [
+        "pork",
+        "kachampuli vinegar",
+        "black pepper"
+      ],
+      "tags": [
+        "kodava"
+      ]
+    },
+    {
+      "slug": "mysore-pak",
+      "name": "Mysore Pak",
+      "local_name": "ಮೈಸೂರು ಪಾಕ್",
+      "description": "Rich gram-flour and ghee sweet, first made in the Mysore palace kitchens.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "gram flour",
+        "ghee",
+        "sugar"
+      ],
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "slug": "akki-rotti",
+      "name": "Akki Rotti",
+      "local_name": "ಅಕ್ಕಿ ರೊಟ್ಟಿ",
+      "description": "Hand-patted rice-flour flatbread with onion and herbs.",
+      "course": "breakfast",
+      "diet": "vegan",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "rice flour",
+        "onion",
+        "dill",
+        "coconut"
+      ],
+      "tags": [
+        "griddle"
+      ]
+    },
+    {
+      "slug": "kesari-bath",
+      "name": "Kesari Bath",
+      "local_name": "ಕೇಸರಿ ಬಾತ್",
+      "description": "Saffron semolina sweet, one half of the 'chow chow bath' breakfast.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "semolina",
+        "ghee",
+        "sugar",
+        "saffron",
+        "cashews"
+      ],
+      "tags": [
+        "breakfast"
+      ]
+    }
+  ]
+}

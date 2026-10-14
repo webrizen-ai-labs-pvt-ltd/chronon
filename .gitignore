@@ -1,0 +1,27 @@
+# dependencies
+node_modules
+.pnp
+.pnp.*
+
+# builds
+.next
+out
+build
+dist
+*.tsbuildinfo
+next-env.d.ts
+
+# environment (keep the documented example)
+.env*
+!.env.example
+
+# local data & tooling
+.data
+.vercel
+.claude
+coverage
+
+# misc
+.DS_Store
+*.pem
+*.log

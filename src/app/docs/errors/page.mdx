@@ -1,0 +1,37 @@
+export const metadata = { title: "Errors" };
+
+# Errors
+
+<Lead>Every error is JSON with the same shape, a stable `code` you can switch on, and a human-readable `message`.</Lead>
+
+```json
+{
+  "error": {
+    "code": "invalid_request",
+    "message": "Invalid `diet`: Invalid option: expected one of \"vegan\"|…",
+    "docs": "https://chronon.webrizen.com/docs/…"
+  }
+}
+```
+
+`docs` is included when there's a page that explains the fix. Messages may be reworded over time; codes won't change
+within `/v1`.
+
+## Codes
+
+| Status | Code | What happened | What to do |
+| --- | --- | --- | --- |
+| 400 | `invalid_request` | A query parameter is missing, unknown or out of range | Fix the parameter named in `message` |
+| 401 | `missing_api_key` | No key in `Authorization` or `X-API-Key` | Send your key ([how](/docs/authentication)) |
+| 401 | `invalid_api_key` | The key is malformed, unknown or revoked | Check for typos, or create a new key |
+| 403 | `account_suspended` | The account broke the [fair-use policy](/docs/limits#fair-use) | Contact us via GitHub issues |
+| 404 | `not_found` | Unknown endpoint, region or dish | Check the slug, or list what exists |
+| 429 | `rate_limited` | Over your per-minute limit | Wait `Retry-After` seconds |
+| 429 | `quota_exceeded` | Monthly quota used up | Wait for the 1st (UTC), or ask for more |
+| 429 | `too_many_failed_attempts` | Too many unknown keys from your IP | Fix the key, wait a minute |
+| 500 | `internal_error` | Something broke on our side | Retry with backoff; open an issue if it persists |
+
+## Retrying
+
+Retry `429` and `500` responses with exponential backoff, and always respect `Retry-After`. Don't retry `4xx`
+errors other than `429`: they'll fail the same way again.

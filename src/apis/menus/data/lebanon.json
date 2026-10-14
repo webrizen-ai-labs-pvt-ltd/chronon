@@ -1,0 +1,191 @@
+{
+  "slug": "lebanon",
+  "name": "Lebanon",
+  "kind": "country",
+  "country_code": "LB",
+  "country": "Lebanon",
+  "summary": "Mezze culture: olive oil, herbs, lemon, chickpeas and grilled meats shared across the table.",
+  "staples": [
+    "olive oil",
+    "chickpeas",
+    "bulgur",
+    "parsley",
+    "lemon"
+  ],
+  "dishes": [
+    {
+      "slug": "hummus",
+      "name": "Hummus",
+      "local_name": "حمص",
+      "description": "Chickpeas blended smooth with tahini and lemon.",
+      "course": "starter",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "chickpeas",
+        "tahini",
+        "lemon",
+        "garlic",
+        "olive oil"
+      ],
+      "tags": [
+        "mezze"
+      ]
+    },
+    {
+      "slug": "tabbouleh",
+      "name": "Tabbouleh",
+      "local_name": "تبولة",
+      "description": "Parsley salad with a little bulgur, sharp with lemon.",
+      "course": "starter",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "parsley",
+        "bulgur",
+        "tomato",
+        "mint",
+        "lemon",
+        "olive oil"
+      ],
+      "tags": [
+        "mezze"
+      ]
+    },
+    {
+      "slug": "fattoush",
+      "name": "Fattoush",
+      "local_name": "فتوش",
+      "description": "Chopped salad with crisp pita and sumac.",
+      "course": "starter",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "mixed greens",
+        "toasted pita",
+        "sumac",
+        "pomegranate molasses"
+      ],
+      "tags": [
+        "mezze"
+      ]
+    },
+    {
+      "slug": "falafel",
+      "name": "Falafel",
+      "local_name": "فلافل",
+      "description": "Fried patties of ground chickpeas, beans and herbs.",
+      "course": "snack",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "chickpeas",
+        "fava beans",
+        "parsley",
+        "cumin"
+      ],
+      "tags": [
+        "street-food"
+      ]
+    },
+    {
+      "slug": "kibbeh",
+      "name": "Kibbeh",
+      "local_name": "كبة",
+      "description": "Bulgur and lamb shells stuffed with spiced meat and pine nuts.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "bulgur",
+        "minced lamb",
+        "onion",
+        "pine nuts"
+      ],
+      "tags": [
+        "national-dish"
+      ]
+    },
+    {
+      "slug": "shawarma",
+      "name": "Shawarma",
+      "local_name": "شاورما",
+      "description": "Spit-roasted meat shaved into flatbread with garlic toum.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "marinated chicken or beef",
+        "toum",
+        "pickles",
+        "flatbread"
+      ],
+      "tags": [
+        "street-food"
+      ]
+    },
+    {
+      "slug": "manakish",
+      "name": "Manakish",
+      "local_name": "مناقيش",
+      "description": "Flatbread baked with za'atar and olive oil, the morning bakery staple.",
+      "course": "breakfast",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "flatbread",
+        "za'atar",
+        "olive oil"
+      ],
+      "tags": [
+        "bakery"
+      ]
+    },
+    {
+      "slug": "baba-ghanoush",
+      "name": "Baba Ghanoush",
+      "local_name": "بابا غنوج",
+      "description": "Smoky charred eggplant mashed with olive oil, garlic and lemon.",
+      "course": "starter",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "smoked eggplant",
+        "olive oil",
+        "garlic",
+        "lemon",
+        "pomegranate"
+      ],
+      "tags": [
+        "mezze"
+      ]
+    },
+    {
+      "slug": "knafeh",
+      "name": "Knafeh",
+      "local_name": "كنافة",
+      "description": "Warm cheese pastry soaked in orange-blossom syrup.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "akkawi cheese",
+        "semolina or kataifi",
+        "sugar syrup",
+        "orange blossom"
+      ],
+      "tags": [
+        "warm"
+      ]
+    }
+  ]
+}

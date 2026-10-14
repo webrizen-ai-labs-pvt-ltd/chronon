@@ -1,0 +1,166 @@
+export const metadata = { title: "Regional menus API" };
+
+# Regional menus
+
+<Lead>
+  A curated dataset of regional dishes: what they're made of, when they're eaten, how spicy they are and who can eat
+  them. Good for menu builders, recipe apps, travel guides and food quizzes.
+</Lead>
+
+All endpoints need an [API key](/docs/authentication) and return JSON. Lists come back as
+`{ "data": [...], "total": n }`, single items as `{ "data": {...} }`.
+
+## Endpoints
+
+| Endpoint | Returns |
+| --- | --- |
+| `GET /v1/menus/regions` | All regions |
+| `GET /v1/menus/regions/{slug}` | One region with all its dishes |
+| `GET /v1/menus/dishes` | Dishes, filtered and paginated |
+| `GET /v1/menus/dishes/{slug}` | One dish |
+| `GET /v1/menus/random` | Random dishes matching filters |
+
+## The dish object
+
+```json
+{
+  "slug": "appam",
+  "name": "Appam",
+  "local_name": "അപ്പം",
+  "description": "Lacy fermented rice pancake with a soft, thick centre.",
+  "course": "breakfast",
+  "diet": "vegan",
+  "spice_level": 0,
+  "price_level": 1,
+  "ingredients": ["rice", "coconut", "yeast or toddy"],
+  "tags": ["fermented"],
+  "region": { "slug": "kerala", "name": "Kerala", "country_code": "IN" }
+}
+```
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `slug` | string | Stable, unique id. Use it in URLs. |
+| `name` | string | Common English name |
+| `local_name` | string \| null | Name in the local script, when it adds something |
+| `description` | string | One sentence |
+| `course` | enum | `breakfast` `starter` `main` `side` `bread` `rice` `snack` `dessert` `beverage` |
+| `diet` | enum | `vegan` `vegetarian` `eggetarian` `pescatarian` `non_vegetarian` (see below) |
+| `spice_level` | 0–5 | 0 is not spicy, 5 is very hot. Typical preparation; homes and restaurants vary |
+| `price_level` | 1–3 | Relative to the region: 1 everyday/street, 2 restaurant, 3 premium or festive |
+| `ingredients` | string[] | Main ingredients, not a full recipe |
+| `tags` | string[] | Loose descriptors such as `street-food`, `festive`, `fermented` |
+| `region` | object | Where the dish comes from |
+
+<Callout title="About diet">
+  `vegetarian` follows Indian usage: no meat, fish **or egg**; dairy is fine. `eggetarian` adds eggs. Diet labels
+  describe the traditional recipe. Always check with the kitchen if it matters for allergies or religious reasons.
+</Callout>
+
+## List regions
+
+<Endpoint path="/menus/regions" />
+
+<ParamTable
+  params={[{ name: "country", type: "string", description: <>Two-letter country code, e.g. <code>IN</code>, <code>JP</code></> }]}
+/>
+
+```json
+{
+  "data": [
+    {
+      "slug": "kerala",
+      "name": "Kerala",
+      "kind": "state",
+      "country_code": "IN",
+      "country": "India",
+      "summary": "Coconut, curry leaves and coastal seafood, …",
+      "staples": ["coconut", "coconut oil", "rice", "curry leaves", "black pepper"],
+      "dish_count": 10
+    }
+  ],
+  "total": 11
+}
+```
+
+`kind` is one of `country`, `state`, `region` or `city`.
+
+## Get a region
+
+<Endpoint path="/menus/regions/{slug}" />
+
+Returns the region object above plus a `dishes` array (dish objects without the `region` field).
+
+## List dishes
+
+<Endpoint path="/menus/dishes" />
+
+<ParamTable
+  params={[
+    { name: "region", type: "slug", description: "Only dishes from this region" },
+    { name: "country", type: "string", description: "Two-letter country code" },
+    { name: "course", type: "enum", description: "One of the course values above" },
+    {
+      name: "diet",
+      type: "enum",
+      description: (
+        <>
+          Dishes <em>suitable for</em> this diet: <code>vegetarian</code> also returns vegan dishes,{" "}
+          <code>pescatarian</code> returns vegan, vegetarian and eggetarian ones too
+        </>
+      ),
+    },
+    { name: "max_spice", type: "0–5", description: "Spice level at most this" },
+    { name: "q", type: "string", description: "Search name, local name, region, ingredients and tags (accents ignored)" },
+    { name: "limit", type: "1–100", description: "Page size, default 20" },
+    { name: "cursor", type: "string", description: <>The <code>next_cursor</code> from the previous page</> },
+  ]}
+/>
+
+Results are sorted by name. Paginate by passing `next_cursor` back until it's `null`:
+
+```js
+let cursor = null;
+const all = [];
+do {
+  const url = new URL("https://chronon.webrizen.com/v1/menus/dishes");
+  url.searchParams.set("country", "IN");
+  url.searchParams.set("limit", "100");
+  if (cursor) url.searchParams.set("cursor", cursor);
+  const res = await fetch(url, { headers: { Authorization: `Bearer ${process.env.CHRONON_KEY}` } });
+  const page = await res.json();
+  all.push(...page.data);
+  cursor = page.next_cursor;
+} while (cursor);
+```
+
+## Get a dish
+
+<Endpoint path="/menus/dishes/{slug}" />
+
+```bash
+curl https://chronon.webrizen.com/v1/menus/dishes/laal-maas \
+  -H "Authorization: Bearer $CHRONON_KEY"
+```
+
+## Random dishes
+
+<Endpoint path="/menus/random" />
+
+Takes the same filters as [list dishes](#list-dishes) (except `limit` and `cursor`), plus:
+
+<ParamTable params={[{ name: "count", type: "1–10", description: "How many dishes, default 1. Never repeats within one response." }]} />
+
+```bash
+curl "https://chronon.webrizen.com/v1/menus/random?diet=vegan&max_spice=2&count=3" \
+  -H "Authorization: Bearer $CHRONON_KEY"
+```
+
+Returns `404 not_found` if nothing matches.
+
+## Regions in the dataset
+
+<RegionList />
+
+The data is curated by hand and lives in the repository. Spotted a mistake, or want your region in?
+See [Contributing](/docs/contributing#add-or-fix-menu-data).

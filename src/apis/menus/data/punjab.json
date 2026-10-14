@@ -1,0 +1,199 @@
+{
+  "slug": "punjab",
+  "name": "Punjab",
+  "kind": "state",
+  "country_code": "IN",
+  "country": "India",
+  "summary": "Wheat-and-dairy country: tandoor breads, slow-cooked dals and butter-rich gravies.",
+  "staples": [
+    "wheat",
+    "ghee",
+    "paneer",
+    "mustard greens",
+    "black lentils"
+  ],
+  "dishes": [
+    {
+      "slug": "sarson-da-saag",
+      "name": "Sarson da Saag",
+      "local_name": "ਸਰ੍ਹੋਂ ਦਾ ਸਾਗ",
+      "description": "Mustard greens simmered for hours and mashed, finished with ghee; eaten with makki di roti.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "mustard greens",
+        "spinach",
+        "bathua",
+        "ginger",
+        "garlic",
+        "ghee"
+      ],
+      "tags": [
+        "winter",
+        "slow-cooked"
+      ]
+    },
+    {
+      "slug": "makki-di-roti",
+      "name": "Makki di Roti",
+      "local_name": "ਮੱਕੀ ਦੀ ਰੋਟੀ",
+      "description": "Hand-patted maize flatbread cooked on a tawa and topped with white butter.",
+      "course": "bread",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "maize flour",
+        "water",
+        "salt",
+        "white butter"
+      ],
+      "tags": [
+        "winter",
+        "griddle"
+      ]
+    },
+    {
+      "slug": "dal-makhani",
+      "name": "Dal Makhani",
+      "local_name": "ਦਾਲ ਮੱਖਣੀ",
+      "description": "Whole black lentils and kidney beans cooked low overnight with butter and cream.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 1,
+      "price_level": 2,
+      "ingredients": [
+        "black urad dal",
+        "red kidney beans",
+        "butter",
+        "cream",
+        "tomato"
+      ],
+      "tags": [
+        "slow-cooked"
+      ]
+    },
+    {
+      "slug": "butter-chicken",
+      "name": "Butter Chicken",
+      "local_name": null,
+      "description": "Tandoori chicken in a mild, buttery tomato gravy, created by Punjabi cooks in Delhi.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 2,
+      "price_level": 2,
+      "ingredients": [
+        "tandoori chicken",
+        "tomato",
+        "butter",
+        "cream",
+        "kasuri methi"
+      ],
+      "tags": [
+        "tandoor"
+      ]
+    },
+    {
+      "slug": "amritsari-kulcha",
+      "name": "Amritsari Kulcha",
+      "local_name": "ਅੰਮ੍ਰਿਤਸਰੀ ਕੁਲਚਾ",
+      "description": "Crisp, layered stuffed bread from Amritsar's tandoors, served with chole.",
+      "course": "bread",
+      "diet": "vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "maida",
+        "potato",
+        "onion",
+        "coriander",
+        "butter"
+      ],
+      "tags": [
+        "tandoor",
+        "street-food"
+      ]
+    },
+    {
+      "slug": "chole",
+      "name": "Chole",
+      "local_name": "ਛੋਲੇ",
+      "description": "Dark, tangy chickpea curry, often coloured with tea while the chickpeas boil.",
+      "course": "main",
+      "diet": "vegan",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "chickpeas",
+        "onion",
+        "tomato",
+        "ginger",
+        "chole masala",
+        "tea leaves"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "amritsari-fish",
+      "name": "Amritsari Fish",
+      "local_name": null,
+      "description": "Batter-fried fish seasoned with carom seeds and chilli.",
+      "course": "starter",
+      "diet": "pescatarian",
+      "spice_level": 2,
+      "price_level": 2,
+      "ingredients": [
+        "river fish",
+        "gram flour",
+        "ajwain",
+        "red chilli",
+        "lemon"
+      ],
+      "tags": [
+        "fried"
+      ]
+    },
+    {
+      "slug": "lassi",
+      "name": "Lassi",
+      "local_name": "ਲੱਸੀ",
+      "description": "Thick churned yogurt drink, sweet or salted, served in tall steel glasses.",
+      "course": "beverage",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "yogurt",
+        "sugar or salt",
+        "cream"
+      ],
+      "tags": [
+        "summer"
+      ]
+    },
+    {
+      "slug": "pinni",
+      "name": "Pinni",
+      "local_name": "ਪਿੰਨੀ",
+      "description": "Dense winter sweet of roasted flour, ghee and nuts.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "wheat flour",
+        "ghee",
+        "jaggery",
+        "almonds"
+      ],
+      "tags": [
+        "winter",
+        "festive"
+      ]
+    }
+  ]
+}

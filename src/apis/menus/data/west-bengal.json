@@ -1,0 +1,188 @@
+{
+  "slug": "west-bengal",
+  "name": "West Bengal",
+  "kind": "state",
+  "country_code": "IN",
+  "country": "India",
+  "summary": "Fish, rice and mustard, eaten in a set order of courses and finished with sweets made from chhena.",
+  "staples": [
+    "rice",
+    "mustard oil",
+    "mustard seeds",
+    "freshwater fish",
+    "panch phoron"
+  ],
+  "dishes": [
+    {
+      "slug": "shorshe-ilish",
+      "name": "Shorshe Ilish",
+      "local_name": "সর্ষে ইলিশ",
+      "description": "Hilsa cooked in a sharp mustard paste.",
+      "course": "main",
+      "diet": "pescatarian",
+      "spice_level": 3,
+      "price_level": 3,
+      "ingredients": [
+        "hilsa",
+        "mustard paste",
+        "mustard oil",
+        "green chilli"
+      ],
+      "tags": [
+        "monsoon"
+      ]
+    },
+    {
+      "slug": "macher-jhol",
+      "name": "Macher Jhol",
+      "local_name": "মাছের ঝোল",
+      "description": "Light, everyday fish curry with potatoes.",
+      "course": "main",
+      "diet": "pescatarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "rohu",
+        "potato",
+        "turmeric",
+        "cumin",
+        "ginger"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "kosha-mangsho",
+      "name": "Kosha Mangsho",
+      "local_name": "কষা মাংস",
+      "description": "Mutton slow-fried (kosha) until dark and rich.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 3,
+      "price_level": 2,
+      "ingredients": [
+        "mutton",
+        "onion",
+        "mustard oil",
+        "ginger",
+        "garlic"
+      ],
+      "tags": [
+        "sunday"
+      ]
+    },
+    {
+      "slug": "shukto",
+      "name": "Shukto",
+      "local_name": "শুক্তো",
+      "description": "Mildly bitter mixed-vegetable dish that opens a Bengali meal.",
+      "course": "side",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "bitter gourd",
+        "raw banana",
+        "sweet potato",
+        "milk",
+        "poppy seeds"
+      ],
+      "tags": [
+        "first-course"
+      ]
+    },
+    {
+      "slug": "luchi",
+      "name": "Luchi",
+      "local_name": "লুচি",
+      "description": "Puffed fried flatbread of white flour, a festive breakfast with aloor dom.",
+      "course": "bread",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "maida",
+        "ghee"
+      ],
+      "tags": [
+        "fried",
+        "festive"
+      ]
+    },
+    {
+      "slug": "rosogolla",
+      "name": "Rosogolla",
+      "local_name": "রসগোল্লা",
+      "description": "Spongy chhena balls in light sugar syrup.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "chhena",
+        "sugar syrup"
+      ],
+      "tags": [
+        "chhena"
+      ]
+    },
+    {
+      "slug": "mishti-doi",
+      "name": "Mishti Doi",
+      "local_name": "মিষ্টি দই",
+      "description": "Sweet set yogurt in earthen pots.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "milk",
+        "jaggery or caramelised sugar"
+      ],
+      "tags": [
+        "earthen-pot"
+      ]
+    },
+    {
+      "slug": "kathi-roll",
+      "name": "Kathi Roll",
+      "local_name": "কাঠি রোল",
+      "description": "Egg-coated paratha wrapped around skewered kebab, born in Kolkata.",
+      "course": "snack",
+      "diet": "non_vegetarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "paratha",
+        "egg",
+        "kebab",
+        "onion",
+        "green chilli"
+      ],
+      "tags": [
+        "street-food",
+        "kolkata"
+      ]
+    },
+    {
+      "slug": "chingri-malai-curry",
+      "name": "Chingri Malai Curry",
+      "local_name": "চিংড়ি মালাইকারি",
+      "description": "Large prawns in a rich coconut-milk gravy.",
+      "course": "main",
+      "diet": "pescatarian",
+      "spice_level": 1,
+      "price_level": 3,
+      "ingredients": [
+        "prawns",
+        "coconut milk",
+        "ghee",
+        "garam masala"
+      ],
+      "tags": [
+        "festive"
+      ]
+    }
+  ]
+}

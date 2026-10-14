@@ -1,0 +1,273 @@
+@import "tailwindcss";
+/* Brand tokens are the single source of truth: brand/tokens.css */
+@import "../../brand/tokens.css";
+
+@theme inline {
+  --color-night: var(--chronon-night);
+  --color-night-2: var(--chronon-night-2);
+  --color-line-dark: var(--chronon-line-dark);
+  --color-paper: var(--chronon-paper);
+  --color-line-light: var(--chronon-line-light);
+  --color-photon: var(--chronon-photon);
+  --color-on-photon: var(--chronon-on-photon);
+  --color-ion: var(--chronon-ion);
+  --color-ion-soft: var(--chronon-ion-soft);
+  --color-slate: var(--chronon-slate);
+  --color-mist: var(--chronon-mist);
+  --color-mist-2: var(--chronon-mist-2);
+  /* Supporting neutrals used in the brand reference. */
+  --color-ink-2: #3d4152;
+  --color-comment: #6f7590;
+  --color-card: #ffffff;
+
+  --font-display: var(--font-averia), var(--chronon-font-display);
+  --font-mono: var(--font-martian), var(--chronon-font-mono);
+
+  --radius-sm: var(--chronon-radius-sm);
+  --radius-md: var(--chronon-radius-md);
+  --radius-lg: var(--chronon-radius-lg);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--chronon-paper);
+    color: var(--chronon-night);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    text-decoration-color: var(--chronon-photon);
+    text-underline-offset: 3px;
+  }
+  ::selection {
+    background: var(--chronon-ion-soft);
+    color: var(--chronon-night);
+  }
+  :focus-visible {
+    outline: 2px solid var(--chronon-ion);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Mono labels: 12px uppercase, 0.04em. */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+    border-radius: var(--chronon-radius-sm);
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-decoration: none;
+    transition:
+      background-color 120ms,
+      border-color 120ms,
+      color 120ms;
+    cursor: pointer;
+  }
+  .btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  /* Photon: one primary action per view. */
+  .btn-photon {
+    background: var(--chronon-photon);
+    color: var(--chronon-night);
+  }
+  .btn-photon:hover {
+    background: #e57a62;
+  }
+  .btn-outline {
+    border: 1px solid var(--chronon-line-light);
+    background: var(--color-card);
+    color: var(--chronon-night);
+  }
+  .btn-outline:hover {
+    border-color: var(--chronon-night);
+  }
+  .btn-outline-dark {
+    border: 1px solid var(--chronon-line-dark);
+    color: var(--chronon-paper);
+  }
+  .btn-outline-dark:hover {
+    border-color: var(--chronon-mist-2);
+  }
+
+  .input {
+    width: 100%;
+    border-radius: var(--chronon-radius-sm);
+    border: 1px solid var(--chronon-line-light);
+    background: var(--color-card);
+    padding: 8px 12px;
+    font-size: 16px;
+    color: var(--chronon-night);
+  }
+  .input:focus {
+    outline: 2px solid var(--chronon-ion);
+    outline-offset: -1px;
+    border-color: transparent;
+  }
+
+  /* Dark code block: Night ground, Line-dark border. */
+  .code-dark {
+    background: var(--chronon-night);
+    border: 1px solid var(--chronon-line-dark);
+    border-radius: var(--chronon-radius-md);
+    color: var(--chronon-mist);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.9;
+    overflow-x: auto;
+  }
+}
+
+/* ------------------------------------------------------------------ docs prose */
+
+.prose {
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--color-ink-2);
+}
+.prose > * + * {
+  margin-top: 1em;
+}
+.prose h1 {
+  font-size: clamp(40px, 6vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  color: var(--chronon-night);
+  margin-bottom: 0.5em;
+}
+.prose h2 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--chronon-night);
+  margin-top: 2em;
+  scroll-margin-top: 96px;
+}
+.prose h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--chronon-night);
+  margin-top: 1.6em;
+  scroll-margin-top: 96px;
+}
+.prose a {
+  color: var(--chronon-night);
+  text-decoration: underline;
+  text-decoration-color: var(--chronon-photon);
+}
+.prose a:hover {
+  color: var(--chronon-ion);
+}
+.prose strong {
+  color: var(--chronon-night);
+}
+.prose ul,
+.prose ol {
+  padding-left: 1.3em;
+}
+.prose ul {
+  list-style: disc;
+}
+.prose ol {
+  list-style: decimal;
+}
+.prose li + li {
+  margin-top: 0.35em;
+}
+.prose li::marker {
+  color: var(--chronon-slate);
+}
+.prose :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.72em;
+  background: #ecebf5;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  color: var(--chronon-night);
+  overflow-wrap: anywhere;
+}
+.prose figure[data-rehype-pretty-code-figure],
+.prose pre {
+  margin-top: 1.25em;
+}
+.prose pre {
+  background: var(--chronon-night);
+  border: 1px solid var(--chronon-line-dark);
+  border-radius: var(--chronon-radius-md);
+  padding: 18px 22px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--chronon-mist);
+}
+.prose pre code {
+  font-family: inherit;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  display: block;
+  overflow-x: auto;
+}
+.prose th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--chronon-slate);
+  font-weight: 400;
+}
+.prose th,
+.prose td {
+  padding: 10px 14px 10px 0;
+  border-bottom: 1px solid var(--chronon-line-light);
+  vertical-align: top;
+}
+.prose td code {
+  white-space: nowrap;
+}
+.prose hr {
+  border-color: var(--chronon-line-light);
+  margin: 2.5em 0;
+}
+
+/* ------------------------------------------------------------------ motion */
+
+/* The mark turns clockwise, very slowly. */
+@keyframes chronon-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.mark-turn {
+  animation: chronon-turn 120s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mark-turn {
+    animation: none;
+  }
+}

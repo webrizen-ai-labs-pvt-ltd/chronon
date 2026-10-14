@@ -1,0 +1,20 @@
+:root {
+  --chronon-night: #0F1220;      /* dark ground; text on light */
+  --chronon-night-2: #1A1E2E;    /* raised surface on night (code blocks, inputs) */
+  --chronon-line-dark: #2A2F42;  /* borders on night */
+  --chronon-paper: #F7F7FF;      /* light ground */
+  --chronon-line-light: #DCD9CF; /* borders on paper */
+  --chronon-photon: #DE6449;     /* signal accent — one use per view */
+  --chronon-on-photon: #2A0F08;  /* text on photon */
+  --chronon-ion: #5B45C9;        /* links, secondary accent */
+  --chronon-ion-soft: #B6A2F2;   /* values in code on night */
+  --chronon-slate: #6A6F80;      /* meta text on paper */
+  --chronon-mist: #C9CCD8;       /* body text on night */
+  --chronon-mist-2: #9AA0B4;     /* meta text on night */
+  --chronon-font-display: 'Averia Libre', Georgia, serif;
+  --chronon-font-mono: 'Martian Mono', ui-monospace, monospace;
+  /* Google Fonts: family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,400&family=Martian+Mono:wght@400;500 */
+  --chronon-radius-sm: 6px;
+  --chronon-radius-md: 8px;
+  --chronon-radius-lg: 10px;
+}

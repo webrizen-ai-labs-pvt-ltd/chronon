@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,400&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#f7f7ff;color:#0f1220;font-family:'Averia Libre',system-ui,sans-serif}a{color:#0f1220;text-decoration-color:#de6449}a:hover{color:#5b45c9}</style>
+</helmet>
+{{ defs }}
+<div style="display:flex;flex-direction:column">
+
+<section data-screen-label="01 Hero" style="background:#0f1220;color:#f7f7ff;padding:72px clamp(24px,6vw,96px) 96px;display:flex;flex-direction:column;gap:64px">
+  <div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#9aa0b4">
+    <span>CHRONON / BRAND IDENTITY</span><span>V1.0 — OCT 2026</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div style="font-size:clamp(88px,12vw,184px);font-weight:700;letter-spacing:-0.03em;line-height:0.85">chronon</div>
+      <div style="font-size:24px;line-height:1.35;max-width:440px;color:#c9ccd8;text-wrap:pretty">An API platform built around the smallest unit of time. The mark is a molecule: six linked nodes turning around one particle.</div>
+    </div>
+    <div style="display:flex;justify-content:center;color:#f7f7ff;position:relative">
+      <svg width="440" height="440" viewBox="0 0 200 200" style="max-width:100%;height:auto">
+        <g filter="url(#cg)" fill="currentColor"><sc-for list="{{ goo }}" as="d"><path d="{{ d }}"></path></sc-for></g>
+        <sc-for list="{{ sats }}" as="d"><path d="{{ d }}" fill="currentColor"></path></sc-for>
+        <sc-if value="{{ showCore }}"><path d="{{ core }}" fill="#de6449"></path></sc-if>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Construction" style="padding:96px clamp(24px,6vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:64px;align-items:center;border-bottom:1px solid #dcd9cf">
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <div style="font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#6a6f80">01 — THE MARK</div>
+    <div style="font-size:48px;font-weight:650;letter-spacing:-0.035em;line-height:1">Rotational, not mirrored.</div>
+    <div style="font-size:19px;line-height:1.5;color:#3d4152;max-width:480px;text-wrap:pretty">Each arm forks into one long branch and one short one, so the mark turns clockwise instead of sitting still. Satellites fill the gaps between arms, and the core particle (the chronon) is the only part in colour.</div>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:10px 24px;font-family:'Martian Mono',monospace;font-size:13px;color:#0f1220;margin-top:12px">
+      <span style="color:#6a6f80">Arms</span><span>6 × 60° rotation</span>
+      <span style="color:#6a6f80">Branches</span><span>+22° long / −18° short</span>
+      <span style="color:#6a6f80">Nodes</span><span>Ø 22 / Ø 18 units</span>
+      <span style="color:#6a6f80">Satellites</span><span>Ø 13 at r 49, 31°</span>
+      <span style="color:#6a6f80">Core</span><span>Ø 14, Photon</span>
+      <span style="color:#6a6f80">Clear space</span><span>1 long-node diameter</span>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:center;color:#0f1220">
+    <svg width="440" height="440" viewBox="-10 -10 220 220" style="max-width:100%;height:auto">
+      <sc-if value="{{ showGuides }}">
+        <g fill="none" stroke="#8f78e8" stroke-width="0.35" stroke-dasharray="1.5 1.5">
+          <circle cx="100" cy="100" r="20"></circle><circle cx="100" cy="100" r="46"></circle><circle cx="100" cy="100" r="64"></circle><circle cx="100" cy="100" r="82"></circle><circle cx="100" cy="100" r="95"></circle>
+        </g>
+        <g stroke="#8f78e8" stroke-width="0.35"><sc-for list="{{ spokes }}" as="s"><line x1="100" y1="100" x2="{{ s.x }}" y2="{{ s.y }}"></line></sc-for></g>
+      </sc-if>
+      <g filter="url(#cg)" fill="currentColor"><sc-for list="{{ goo }}" as="d"><path d="{{ d }}"></path></sc-for></g>
+      <sc-for list="{{ sats }}" as="d"><path d="{{ d }}" fill="currentColor"></path></sc-for>
+      <sc-if value="{{ showCore }}"><path d="{{ core }}" fill="#0f1220"></path></sc-if>
+    </svg>
+  </div>
+</section>
+
+<section data-screen-label="03 Lockups" style="padding:96px clamp(24px,6vw,96px);display:flex;flex-direction:column;gap:40px;border-bottom:1px solid #dcd9cf">
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#6a6f80">02 — LOCKUPS</div>
+    <div style="font-size:48px;font-weight:650;letter-spacing:-0.035em;line-height:1">One mark, four uses.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+    <div style="background:#ffffff;border:1px solid #dcd9cf;border-radius:8px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;padding:20px">
+      <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:16px;color:#0f1220">
+        <svg width="64" height="64" viewBox="0 0 200 200"><g filter="url(#cg)" fill="currentColor"><sc-for list="{{ goo }}" as="d"><path d="{{ d }}"></path></sc-for></g><sc-for list="{{ sats }}" as="d"><path d="{{ d }}" fill="currentColor"></path></sc-for><sc-if value="{{ showCore }}"><path d="{{ core }}" fill="#5b45c9"></path></sc-if></svg>
+        <span style="font-size:54px;font-weight:700;letter-spacing:-0.03em;line-height:1">chronon</span>
+      </div>
+      <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#6a6f80">Primary horizontal — on light</span>
+    </div>
+    <div style="background:#0f1220;border-radius:8px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;padding:20px">
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#f7f7ff">
+        <svg width="88" height="88" viewBox="0 0 200 200"><g filter="url(#cg)" fill="currentColor"><sc-for list="{{ goo }}" as="d"><path d="{{ d }}"></path></sc-for></g><sc-for list="{{ sats }}" as="d"><path d="{{ d }}" fill="currentColor"></path></sc-for><sc-if value="{{ showCore }}"><path d="{{ core }}" fill="#de6449"></path></sc-if></svg>
+        <span style="font-size:40px;font-weight:700;letter-spacing:-0.03em;line-height:1">chronon</span>
+      </div>
+      <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#9aa0b4">Stacked — on Night</span>
+    </div>
+    <div style="background:#de6449;border-radius:8px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;padding:20px">
+      <div style="flex:1;display:flex;align-items:center;justify-content:center;color:#0f1220">
+        <svg width="140" height="140" viewBox="0 0 200 200"><g filter="url(#cg)" fill="currentColor"><sc-for list="{{ goo }}" as="d"><path d="{{ d }}"></path></sc-for></g><sc-for list="{{ sats }}" as="d"><path d="{{ d }}" fill="currentColor"></path></sc-for><sc-if value="{{ showCore }}"><path d="{{ core }}" fill="#0f1220"></path></sc-if></svg>
+      </div>
+      <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#2a0f08">Mark only — on Photon</span>
+    </div>
+    <div style="background:#e9e6dc;border-radius:8px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;padding:20px">
+      <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:28px">
+        <div style="width:120px;height:120px;border-radius:28px;background:#0f1220;display:flex;align-items:center;justify-content:center;color:#f7f7ff">
+          <svg width="84" height="84" viewBox="0 0 200 200"><g filter="url(#cg)" fill="currentColor"><sc-for list="{{ goo }}" as="d"><path d="{{ d }}"></path></sc-for></g><sc-for list="{{ sats }}" as="d"><path d="{{ d }}" fill="currentColor"></path></sc-for><sc-if value="{{ showCore }}"><path d="{{ core }}" fill="#de6449"></path></sc-if></svg>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;align-items:center">
+          <div style="width:40px;height:40px;border-radius:9px;background:#0f1220;display:flex;align-items:center;justify-content:center;color:#f7f7ff"><svg width="30" height="30" viewBox="0 0 200 200"><g filter="url(#cg)" fill="currentColor"><sc-for list="{{ goo }}" as="d"><path d="{{ d }}"></path></sc-for></g><sc-for list="{{ sats }}" as="d"><path d="{{ d }}" fill="currentColor"></path></sc-for><sc-if value="{{ showCore }}"><path d="{{ core }}" fill="#de6449"></path></sc-if></svg></div>
+          <div style="width:20px;height:20px;border-radius:5px;background:#0f1220;display:flex;align-items:center;justify-content:center;color:#f7f7ff"><svg width="16" height="16" viewBox="0 0 200 200"><g filter="url(#cg)" fill="currentColor"><sc-for list="{{ goo }}" as="d"><path d="{{ d }}"></path></sc-for></g><sc-for list="{{ sats }}" as="d"><path d="{{ d }}" fill="currentColor"></path></sc-for><sc-if value="{{ showCore }}"><path d="{{ core }}" fill="#de6449"></path></sc-if></svg></div>
+        </div>
+      </div>
+      <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#4a4e5e">App icon, 32px &amp; 16px favicon</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Color" style="padding:96px clamp(24px,6vw,96px);display:flex;flex-direction:column;gap:40px;border-bottom:1px solid #dcd9cf">
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#6a6f80">03 — COLOUR</div>
+    <div style="font-size:48px;font-weight:650;letter-spacing:-0.035em;line-height:1">Deep night, one bright particle.</div>
+    <div style="font-size:19px;line-height:1.5;color:#3d4152;max-width:620px;text-wrap:pretty">Night and Paper carry about 90% of every surface. Use Photon sparingly, like the core of the mark: on one action, signal or highlight per view.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:2fr 2fr 1.4fr 1fr 1fr;gap:12px;min-height:340px">
+    <div style="background:#0f1220;color:#f7f7ff;border-radius:8px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px"><span style="font-size:26px;font-weight:650;letter-spacing:-0.02em">Night</span><span style="font-family:'Martian Mono',monospace;font-size:12px;color:#c9ccd8">#0F1220 — ground, text</span></div>
+    <div style="background:#f7f7ff;color:#0f1220;border:1px solid #dcd9cf;border-radius:8px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px"><span style="font-size:26px;font-weight:650;letter-spacing:-0.02em">Paper</span><span style="font-family:'Martian Mono',monospace;font-size:12px;color:#4a4e5e">#F7F7FF — ground</span></div>
+    <div style="background:#de6449;color:#0f1220;border-radius:8px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px"><span style="font-size:26px;font-weight:650;letter-spacing:-0.02em">Photon</span><span style="font-family:'Martian Mono',monospace;font-size:12px;color:#2a0f08">#DE6449 — signal</span></div>
+    <div style="background:#5b45c9;color:#ffffff;border-radius:8px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px"><span style="font-size:22px;font-weight:650;letter-spacing:-0.02em">Ion</span><span style="font-family:'Martian Mono',monospace;font-size:11px;color:#e4defb">#5B45C9 — links</span></div>
+    <div style="background:#6a6f80;color:#ffffff;border-radius:8px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px"><span style="font-size:22px;font-weight:650;letter-spacing:-0.02em">Slate</span><span style="font-family:'Martian Mono',monospace;font-size:11px;color:#eceef3">#6A6F80 — meta</span></div>
+  </div>
+</section>
+
+<section data-screen-label="05 Type" style="padding:96px clamp(24px,6vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:48px;border-bottom:1px solid #dcd9cf">
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <div style="font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#6a6f80">04 — DISPLAY &amp; TEXT</div>
+    <div style="font-size:200px;font-weight:700;letter-spacing:-0.035em;line-height:0.8">Aa</div>
+    <div style="font-size:30px;font-weight:600;letter-spacing:-0.025em">Averia Libre</div>
+    <div style="font-size:19px;line-height:1.5;color:#3d4152;max-width:460px;text-wrap:pretty">Softened, slightly irregular letterforms that echo the organic joins of the mark. Headlines at 700, body at 400; italics for emphasis only.</div>
+    <div style="font-size:44px;font-weight:650;letter-spacing:-0.035em;line-height:1.05;margin-top:8px">Precise to the instant.</div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <div style="font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#6a6f80">05 — CODE &amp; DATA</div>
+    <div style="font-family:'Martian Mono',monospace;font-size:120px;font-weight:400;letter-spacing:-0.04em;line-height:0.95">{ }</div>
+    <div style="font-size:30px;font-weight:600;letter-spacing:-0.025em">Martian Mono</div>
+    <div style="font-size:19px;line-height:1.5;color:#3d4152;max-width:460px;text-wrap:pretty">Wide and engineered. Use it for endpoints, code, timestamps and labels, never for long prose.</div>
+    <div style="background:#0f1220;color:#c9ccd8;border-radius:8px;padding:22px 24px;font-family:'Martian Mono',monospace;font-size:13px;line-height:1.9;overflow:auto">
+      <div><span style="color:#de6449">GET</span> <span style="color:#f7f7ff">/v1/events</span>?since=<span style="color:#b6a2f2">2026-10-14T09:00:00.000Z</span></div>
+      <div style="color:#6f7590">// 200 OK · 12ms</div>
+      <div>{ "id": <span style="color:#b6a2f2">"evt_7Qx2"</span>, "at": <span style="color:#b6a2f2">1791990021290</span> }</div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 In use" style="padding:96px clamp(24px,6vw,96px);display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#6a6f80">06 — IN USE</div>
+    <div style="font-size:48px;font-weight:650;letter-spacing:-0.035em;line-height:1">Docs header &amp; social card.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:16px">
+    <div style="background:#0f1220;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;padding:16px 22px;border-bottom:1px solid #2a2f42;color:#f7f7ff">
+        <div style="display:flex;align-items:center;gap:10px">
+          <svg width="26" height="26" viewBox="0 0 200 200"><g filter="url(#cg)" fill="currentColor"><sc-for list="{{ goo }}" as="d"><path d="{{ d }}"></path></sc-for></g><sc-for list="{{ sats }}" as="d"><path d="{{ d }}" fill="currentColor"></path></sc-for><sc-if value="{{ showCore }}"><path d="{{ core }}" fill="#de6449"></path></sc-if></svg>
+          <span style="font-size:22px;font-weight:700;letter-spacing:-0.05em">chronon</span>
+          <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#9aa0b4;border:1px solid #2a2f42;border-radius:4px;padding:2px 6px">docs</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:15px;color:#c9ccd8;margin-left:auto;white-space:nowrap"><span>Guides</span><span>API reference</span><span>Changelog</span></div>
+        <span style="white-space:nowrap;background:#de6449;color:#0f1220;font-size:14px;font-weight:600;padding:8px 14px;border-radius:6px">Get API key</span>
+      </div>
+      <div style="padding:40px 32px 44px;display:flex;flex-direction:column;gap:16px;color:#f7f7ff">
+        <div style="font-family:'Martian Mono',monospace;font-size:12px;color:#de6449">QUICKSTART</div>
+        <div style="font-size:44px;font-weight:650;letter-spacing:-0.035em;line-height:1">Your first request in under a minute.</div>
+        <div style="font-family:'Martian Mono',monospace;font-size:13px;background:#1a1e2e;border:1px solid #2a2f42;border-radius:6px;padding:14px 16px;color:#c9ccd8">$ curl https://api.chronon.dev/v1/ping</div>
+      </div>
+    </div>
+    <div style="background:#5b45c9;border-radius:10px;overflow:hidden;position:relative;aspect-ratio:1200/630;display:flex;flex-direction:column;justify-content:space-between;padding:32px;color:#ffffff">
+      <div style="position:absolute;right:-18%;top:-22%;width:78%;aspect-ratio:1;color:#0f1220">
+        <svg width="100%" height="100%" viewBox="0 0 200 200"><g filter="url(#cg)" fill="currentColor"><sc-for list="{{ goo }}" as="d"><path d="{{ d }}"></path></sc-for></g><sc-for list="{{ sats }}" as="d"><path d="{{ d }}" fill="currentColor"></path></sc-for><sc-if value="{{ showCore }}"><path d="{{ core }}" fill="#de6449"></path></sc-if></svg>
+      </div>
+      <span style="position:relative;font-family:'Martian Mono',monospace;font-size:12px;color:#e4defb">chronon.dev</span>
+      <div style="position:relative;font-size:clamp(36px,4vw,56px);font-weight:700;letter-spacing:-0.045em;line-height:0.95;max-width:62%">Time-precise APIs, now in public beta.</div>
+    </div>
+  </div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showCore&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showGuides&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  dot(x, y, r) { return `M${(x - r).toFixed(2)} ${y.toFixed(2)}a${r} ${r} 0 1 0 ${2 * r} 0a${r} ${r} 0 1 0 ${-2 * r} 0Z`; }
+  pol(r, deg) { const a = deg * Math.PI / 180; return [100 + r * Math.cos(a), 100 + r * Math.sin(a)]; }
+  cap(a, b, w) {
+    const f = x => x.toFixed(2), h = w / 2, L = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, nx = -(b[1] - a[1]) / L * h, ny = (b[0] - a[0]) / L * h;
+    return `M${f(a[0] + nx)} ${f(a[1] + ny)}L${f(b[0] + nx)} ${f(b[1] + ny)}A${h} ${h} 0 0 0 ${f(b[0] - nx)} ${f(b[1] - ny)}L${f(a[0] - nx)} ${f(a[1] - ny)}A${h} ${h} 0 0 0 ${f(a[0] + nx)} ${f(a[1] + ny)}Z`;
+  }
+  renderVals() {
+    const goo = [], sats = [], spokes = [];
+    for (let k = 0; k < 6; k++) {
+      const t = k * 60 - 90, s = this.pol(20, t), m = this.pol(46, t), a = this.pol(82, t + 22), b = this.pol(64, t - 18), sat = this.pol(49, t + 31);
+      goo.push(this.cap(s, m, 12), this.cap(m, a, 11), this.cap(m, b, 11), this.dot(a[0], a[1], 11), this.dot(b[0], b[1], 9));
+      sats.push(this.dot(sat[0], sat[1], 6.5));
+      const e = this.pol(108, t); spokes.push({ x: e[0].toFixed(1), y: e[1].toFixed(1) });
+    }
+    const h = React.createElement;
+    return {
+      goo, sats, spokes, core: this.dot(100, 100, 7),
+      showCore: this.props.showCore ?? true,
+      showGuides: this.props.showGuides ?? true,
+      defs: h('svg', { width: 0, height: 0, style: { position: 'absolute' }, 'aria-hidden': true }, h('defs', null,
+        h('filter', { id: 'cg', x: '-15%', y: '-15%', width: '130%', height: '130%' },
+          h('feGaussianBlur', { in: 'SourceGraphic', stdDeviation: 2.6 }),
+          h('feColorMatrix', { mode: 'matrix', values: '1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9' })))),
+    };
+  }
+}
+</script>
+</body>
+</html>

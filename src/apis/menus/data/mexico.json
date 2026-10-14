@@ -1,0 +1,214 @@
+{
+  "slug": "mexico",
+  "name": "Mexico",
+  "kind": "country",
+  "country_code": "MX",
+  "country": "Mexico",
+  "summary": "Corn, chillies and beans since pre-Hispanic times, with regional moles, salsas and street tacos.",
+  "staples": [
+    "nixtamalised corn",
+    "dried chillies",
+    "beans",
+    "tomatillos",
+    "lime"
+  ],
+  "dishes": [
+    {
+      "slug": "tacos-al-pastor",
+      "name": "Tacos al Pastor",
+      "local_name": null,
+      "description": "Spit-roasted marinated pork with pineapple, inspired by Lebanese shawarma.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "pork",
+        "achiote",
+        "guajillo chillies",
+        "pineapple",
+        "corn tortillas"
+      ],
+      "tags": [
+        "street-food",
+        "mexico city"
+      ]
+    },
+    {
+      "slug": "mole-poblano",
+      "name": "Mole Poblano",
+      "local_name": null,
+      "description": "Dark sauce of dried chillies, spices and chocolate, served over turkey.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 2,
+      "price_level": 2,
+      "ingredients": [
+        "turkey or chicken",
+        "ancho",
+        "mulato and pasilla chillies",
+        "chocolate",
+        "sesame"
+      ],
+      "tags": [
+        "puebla",
+        "festive"
+      ]
+    },
+    {
+      "slug": "chiles-en-nogada",
+      "name": "Chiles en Nogada",
+      "local_name": null,
+      "description": "Stuffed poblanos in walnut sauce with pomegranate, in the colours of the flag.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 1,
+      "price_level": 3,
+      "ingredients": [
+        "poblano chillies",
+        "picadillo",
+        "walnut cream",
+        "pomegranate"
+      ],
+      "tags": [
+        "puebla",
+        "seasonal"
+      ]
+    },
+    {
+      "slug": "pozole",
+      "name": "Pozole",
+      "local_name": null,
+      "description": "Hominy and pork broth, red, green or white, garnished at the table.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "hominy",
+        "pork",
+        "dried chillies",
+        "radish",
+        "oregano"
+      ],
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "slug": "tamales",
+      "name": "Tamales",
+      "local_name": null,
+      "description": "Masa dough with fillings, steamed in corn husks.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "masa",
+        "lard",
+        "chicken or pork",
+        "salsa",
+        "corn husk"
+      ],
+      "tags": [
+        "steamed"
+      ]
+    },
+    {
+      "slug": "chilaquiles",
+      "name": "Chilaquiles",
+      "local_name": null,
+      "description": "Fried tortillas simmered in salsa; a classic breakfast.",
+      "course": "breakfast",
+      "diet": "vegetarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "tortilla chips",
+        "salsa verde or roja",
+        "crema",
+        "queso fresco"
+      ],
+      "tags": [
+        "breakfast"
+      ]
+    },
+    {
+      "slug": "cochinita-pibil",
+      "name": "Cochinita Pibil",
+      "local_name": null,
+      "description": "Pork marinated in achiote and sour orange, slow-roasted in banana leaves.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 1,
+      "price_level": 2,
+      "ingredients": [
+        "pork",
+        "achiote",
+        "sour orange",
+        "banana leaves"
+      ],
+      "tags": [
+        "yucatán"
+      ]
+    },
+    {
+      "slug": "guacamole",
+      "name": "Guacamole",
+      "local_name": null,
+      "description": "Avocado mashed with chilli, onion and coriander.",
+      "course": "side",
+      "diet": "vegan",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "avocado",
+        "onion",
+        "serrano chilli",
+        "coriander",
+        "lime"
+      ],
+      "tags": [
+        "dip"
+      ]
+    },
+    {
+      "slug": "churros",
+      "name": "Churros",
+      "local_name": null,
+      "description": "Fried dough sticks rolled in cinnamon sugar, dipped in hot chocolate.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "flour",
+        "sugar",
+        "cinnamon",
+        "hot chocolate"
+      ],
+      "tags": [
+        "fried"
+      ]
+    },
+    {
+      "slug": "horchata",
+      "name": "Horchata",
+      "local_name": null,
+      "description": "Chilled rice drink with cinnamon.",
+      "course": "beverage",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "rice",
+        "cinnamon",
+        "sugar"
+      ],
+      "tags": [
+        "agua fresca"
+      ]
+    }
+  ]
+}

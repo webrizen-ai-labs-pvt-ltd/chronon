@@ -1,0 +1,72 @@
+export const metadata = { title: "Quickstart" };
+
+# Your first request in under a minute.
+
+<Lead>Sign in, create a key, call the API. No card, no forms.</Lead>
+
+## 1. Get a key
+
+Open the [dashboard](/dashboard) and sign in with your Webrizen account. Click **Create key**, give it a name
+(for example the project it's for) and copy it. It looks like this:
+
+```text
+chr_ab12cd34_5Xq9…
+```
+
+<Callout title="Shown once">
+  We store only a hash of your key, so we can't show it again. If you lose it, revoke it and create a new one.
+</Callout>
+
+## 2. Check it works
+
+```bash
+curl https://chronon.webrizen.com/v1/ping \
+  -H "Authorization: Bearer $CHRONON_KEY"
+```
+
+```json
+{
+  "ok": true,
+  "key": "ab12cd34",
+  "tier": "standard",
+  "limits": { "per_minute": 60, "per_month": 50000 },
+  "time": "2026-10-14T09:00:00.000Z"
+}
+```
+
+## 3. Call an API
+
+Find vegan breakfasts from Kerala:
+
+```bash
+curl "https://chronon.webrizen.com/v1/menus/dishes?region=kerala&course=breakfast&diet=vegan" \
+  -H "Authorization: Bearer $CHRONON_KEY"
+```
+
+The same request from JavaScript:
+
+```js
+const res = await fetch("https://chronon.webrizen.com/v1/menus/dishes?region=kerala&diet=vegan", {
+  headers: { Authorization: `Bearer ${process.env.CHRONON_KEY}` },
+});
+const { data, next_cursor } = await res.json();
+```
+
+And from Python:
+
+```python
+import os, requests
+
+res = requests.get(
+    "https://chronon.webrizen.com/v1/menus/dishes",
+    params={"region": "kerala", "diet": "vegan"},
+    headers={"Authorization": f"Bearer {os.environ['CHRONON_KEY']}"},
+)
+print(res.json()["data"])
+```
+
+## Next
+
+- [Authentication](/docs/authentication): where to put the key and how to keep it safe.
+- [Limits & fair use](/docs/limits): the headers that tell you how much you have left.
+- [Regional menus reference](/docs/api/menus): every endpoint and filter.

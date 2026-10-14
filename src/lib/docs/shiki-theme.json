@@ -1,0 +1,25 @@
+{
+  "name": "chronon-night",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#0F1220",
+    "editor.foreground": "#C9CCD8"
+  },
+  "tokenColors": [
+    { "scope": ["comment", "punctuation.definition.comment"], "settings": { "foreground": "#6F7590" } },
+    {
+      "scope": ["keyword", "storage", "storage.type", "keyword.operator.new", "keyword.control", "support.function.builtin.shell"],
+      "settings": { "foreground": "#DE6449" }
+    },
+    {
+      "scope": ["string", "constant.numeric", "constant.language", "constant.character", "string.unquoted"],
+      "settings": { "foreground": "#B6A2F2" }
+    },
+    {
+      "scope": ["entity.name.function", "support.function", "entity.name.type", "support.type.property-name", "meta.object-literal.key", "variable.other.property"],
+      "settings": { "foreground": "#F7F7FF" }
+    },
+    { "scope": ["punctuation", "meta.brace", "keyword.operator"], "settings": { "foreground": "#9AA0B4" } },
+    { "scope": ["variable.parameter", "variable.other.readwrite"], "settings": { "foreground": "#C9CCD8" } }
+  ]
+}

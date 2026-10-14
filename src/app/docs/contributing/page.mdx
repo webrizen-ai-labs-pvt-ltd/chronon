@@ -1,0 +1,93 @@
+export const metadata = { title: "Contributing" };
+
+# Contributing
+
+<Lead>Chronon is MIT-licensed and built in the open. Fixes to data, docs and code are all welcome.</Lead>
+
+## Run it locally
+
+Requirements: Node 20+ and pnpm. Docker is not needed.
+
+```bash
+pnpm install
+cp .env.example .env
+pnpm db:local        # local Postgres on :54321, leave it running
+```
+
+In a second terminal:
+
+```bash
+pnpm db:migrate
+pnpm dev             # http://127.0.0.1:3001
+```
+
+You don't need Webrizen SSO to work on the API. Create a local account and key directly:
+
+```bash
+pnpm dev:key
+curl -H "Authorization: Bearer chr_…" http://127.0.0.1:3001/v1/ping
+```
+
+To work on the dashboard, run Webrizen SSO locally on port 3000, register
+Chronon as an application there (redirect URI `http://127.0.0.1:3001/api/auth/webrizen/callback`), and fill in the
+`WEBRIZEN_SSO_*` variables in `.env`.
+
+Before opening a pull request:
+
+```bash
+pnpm check           # lint + typecheck + tests
+```
+
+## Project layout
+
+```text
+src/
+  app/
+    api/v1/…          route handlers, one folder per endpoint
+    dashboard/        key management (signed in via Webrizen SSO)
+    docs/             these pages (MDX)
+  apis/
+    menus/            the regional menus API: schema, data, query logic
+  lib/
+    api/              withApiKey(): auth, rate limits, error format
+    db/               Drizzle schema and queries
+    keys.ts           key generation and hashing
+    ratelimit.ts      per-minute window + monthly quota
+brand/                logo, tokens and the brand reference
+drizzle/              SQL migrations
+scripts/              local database and dev-key helpers
+tests/                Vitest
+```
+
+## Add or fix menu data
+
+Each region is one JSON file in `src/apis/menus/data/`. To fix a dish, edit its entry. To add a region:
+
+1. Copy an existing file to `<region-slug>.json` and replace its contents.
+2. Import it in `src/apis/menus/data/index.ts`.
+3. Run `pnpm test`, which validates every file and checks slugs are unique.
+
+Please keep it accurate:
+
+- `description` is one plain sentence, no marketing.
+- `diet` describes the traditional recipe. When unsure, choose the stricter label (e.g. `vegetarian` rather than
+  `vegan`).
+- `local_name` only when you're confident of the spelling in the local script; otherwise `null`.
+- `spice_level` and `price_level` are relative judgements; compare with dishes already in the dataset.
+
+## Add a new API
+
+An API is a module in `src/apis/<name>/` plus route handlers in `src/app/api/v1/<name>/`. Wrap every handler in
+`withApiKey` and you get authentication, rate limits and the error format for free:
+
+```ts
+// src/app/api/v1/hello/route.ts
+import { apiJson, preflight } from "@/lib/api/respond";
+import { withApiKey } from "@/lib/api/with-api-key";
+
+export const GET = withApiKey((req, ctx, auth) => apiJson({ hello: auth.keyId }));
+export const OPTIONS = preflight;
+```
+
+Validate query strings with Zod via `parseQuery`, return errors with `apiError`, and add a reference page under
+`src/app/docs/api/`. Open an issue first for anything big, so we can agree on the shape before you build it.

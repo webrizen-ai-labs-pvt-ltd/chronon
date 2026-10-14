@@ -1,0 +1,189 @@
+{
+  "slug": "kashmir",
+  "name": "Kashmir",
+  "kind": "region",
+  "country_code": "IN",
+  "country": "India",
+  "summary": "Wazwan feasts, saffron and dried chillies; Pandit cooking skips onion and garlic, Muslim cooking leans on shallots.",
+  "staples": [
+    "Kashmiri chillies",
+    "fennel",
+    "dry ginger",
+    "saffron",
+    "yogurt"
+  ],
+  "dishes": [
+    {
+      "slug": "rogan-josh",
+      "name": "Rogan Josh",
+      "local_name": "روغن جوش",
+      "description": "Lamb braised red with Kashmiri chillies, fennel and dry ginger.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 2,
+      "price_level": 2,
+      "ingredients": [
+        "lamb",
+        "Kashmiri chillies",
+        "fennel",
+        "dry ginger",
+        "yogurt"
+      ],
+      "tags": [
+        "wazwan"
+      ]
+    },
+    {
+      "slug": "gushtaba",
+      "name": "Gushtaba",
+      "local_name": "گوشتابہ",
+      "description": "Velvety pounded-mutton meatballs in yogurt gravy, the closing course of a wazwan.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 1,
+      "price_level": 3,
+      "ingredients": [
+        "pounded mutton",
+        "yogurt",
+        "cardamom"
+      ],
+      "tags": [
+        "wazwan"
+      ]
+    },
+    {
+      "slug": "rista",
+      "name": "Rista",
+      "local_name": "رستہ",
+      "description": "Pounded mutton balls in a red, chilli-bright gravy.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 3,
+      "price_level": 3,
+      "ingredients": [
+        "pounded mutton",
+        "red chilli gravy"
+      ],
+      "tags": [
+        "wazwan"
+      ]
+    },
+    {
+      "slug": "yakhni",
+      "name": "Yakhni",
+      "local_name": "یخنی",
+      "description": "Mutton in a pale yogurt gravy scented with fennel and mint.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 1,
+      "price_level": 2,
+      "ingredients": [
+        "mutton",
+        "yogurt",
+        "fennel",
+        "dried mint"
+      ],
+      "tags": [
+        "mild"
+      ]
+    },
+    {
+      "slug": "kashmiri-dum-aloo",
+      "name": "Kashmiri Dum Aloo",
+      "local_name": "دم آلو",
+      "description": "Fried baby potatoes in a red yogurt gravy, without onion or garlic.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 3,
+      "price_level": 1,
+      "ingredients": [
+        "baby potatoes",
+        "yogurt",
+        "Kashmiri chillies",
+        "fennel",
+        "dry ginger"
+      ],
+      "tags": [
+        "pandit"
+      ]
+    },
+    {
+      "slug": "haak",
+      "name": "Haak",
+      "local_name": "ہاک",
+      "description": "Kashmiri collard greens cooked simply in mustard oil.",
+      "course": "side",
+      "diet": "vegan",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "collard greens",
+        "mustard oil",
+        "asafoetida",
+        "dried chillies"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "kahwa",
+      "name": "Kahwa",
+      "local_name": "قہوہ",
+      "description": "Green tea with saffron and almonds, served from a samovar.",
+      "course": "beverage",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "green tea",
+        "saffron",
+        "cardamom",
+        "cinnamon",
+        "almonds"
+      ],
+      "tags": [
+        "samovar"
+      ]
+    },
+    {
+      "slug": "noon-chai",
+      "name": "Noon Chai",
+      "local_name": "نون چائے",
+      "description": "Pink salted tea, drunk with breads from the kandur bakery.",
+      "course": "beverage",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "green tea",
+        "baking soda",
+        "salt",
+        "milk"
+      ],
+      "tags": [
+        "breakfast"
+      ]
+    },
+    {
+      "slug": "modur-pulav",
+      "name": "Modur Pulav",
+      "local_name": null,
+      "description": "Sweet saffron rice studded with dried fruits.",
+      "course": "rice",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "rice",
+        "ghee",
+        "sugar",
+        "saffron",
+        "dry fruits"
+      ],
+      "tags": [
+        "festive"
+      ]
+    }
+  ]
+}

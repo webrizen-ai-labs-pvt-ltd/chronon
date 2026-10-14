@@ -1,0 +1,192 @@
+{
+  "slug": "hyderabad",
+  "name": "Hyderabad",
+  "kind": "city",
+  "country_code": "IN",
+  "country": "India",
+  "summary": "Nizami court cooking meets Telangana chilli: dum biryani, haleem and Irani chai.",
+  "staples": [
+    "basmati rice",
+    "goat meat",
+    "yogurt",
+    "tamarind",
+    "peanuts and sesame"
+  ],
+  "dishes": [
+    {
+      "slug": "hyderabadi-dum-biryani",
+      "name": "Hyderabadi Dum Biryani",
+      "local_name": "حیدرآبادی بریانی",
+      "description": "Raw marinated meat layered with rice and sealed to cook in its own steam (kacchi dum).",
+      "course": "rice",
+      "diet": "non_vegetarian",
+      "spice_level": 3,
+      "price_level": 2,
+      "ingredients": [
+        "basmati rice",
+        "goat or chicken",
+        "yogurt",
+        "saffron",
+        "fried onions",
+        "mint"
+      ],
+      "tags": [
+        "dum"
+      ]
+    },
+    {
+      "slug": "haleem",
+      "name": "Haleem",
+      "local_name": "حلیم",
+      "description": "Wheat, lentils and meat pounded for hours into a thick porridge; a Ramadan icon.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 2,
+      "price_level": 2,
+      "ingredients": [
+        "wheat",
+        "lentils",
+        "goat meat",
+        "ghee",
+        "fried onions"
+      ],
+      "tags": [
+        "ramadan"
+      ]
+    },
+    {
+      "slug": "mirchi-ka-salan",
+      "name": "Mirchi ka Salan",
+      "local_name": "مرچی کا سالن",
+      "description": "Long chillies in a nutty, tangy gravy; biryani's classic partner.",
+      "course": "side",
+      "diet": "vegan",
+      "spice_level": 3,
+      "price_level": 1,
+      "ingredients": [
+        "green chillies",
+        "peanuts",
+        "sesame",
+        "tamarind"
+      ],
+      "tags": [
+        "biryani-side"
+      ]
+    },
+    {
+      "slug": "double-ka-meetha",
+      "name": "Double ka Meetha",
+      "local_name": "ڈبل کا میٹھا",
+      "description": "Fried bread soaked in saffron milk; Hyderabad's bread pudding.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "bread",
+        "milk",
+        "sugar",
+        "saffron",
+        "ghee",
+        "dry fruits"
+      ],
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "slug": "qubani-ka-meetha",
+      "name": "Qubani ka Meetha",
+      "local_name": "خوبانی کا میٹھا",
+      "description": "Stewed dried apricots served with cream, a wedding-feast dessert.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "dried apricots",
+        "sugar",
+        "cream"
+      ],
+      "tags": [
+        "weddings"
+      ]
+    },
+    {
+      "slug": "irani-chai",
+      "name": "Irani Chai",
+      "local_name": "ایرانی چائے",
+      "description": "Thick, sweet milky tea from the city's Irani cafés, eaten with Osmania biscuits.",
+      "course": "beverage",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "tea",
+        "milk",
+        "mawa",
+        "sugar"
+      ],
+      "tags": [
+        "café"
+      ]
+    },
+    {
+      "slug": "pathar-ka-gosht",
+      "name": "Pathar ka Gosht",
+      "local_name": "پتھر کا گوشت",
+      "description": "Thin mutton slices seared on a heated granite stone.",
+      "course": "starter",
+      "diet": "non_vegetarian",
+      "spice_level": 2,
+      "price_level": 3,
+      "ingredients": [
+        "mutton",
+        "raw papaya",
+        "ginger",
+        "garlic"
+      ],
+      "tags": [
+        "grilled"
+      ]
+    },
+    {
+      "slug": "bagara-baingan",
+      "name": "Bagara Baingan",
+      "local_name": "بگھارے بیگن",
+      "description": "Baby eggplants in a peanut, sesame and tamarind gravy.",
+      "course": "side",
+      "diet": "vegan",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "baby eggplant",
+        "peanuts",
+        "sesame",
+        "coconut",
+        "tamarind"
+      ],
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "slug": "pesarattu",
+      "name": "Pesarattu",
+      "local_name": "పెసరట్టు",
+      "description": "Green-gram crepe, often served with upma folded inside.",
+      "course": "breakfast",
+      "diet": "vegan",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "green moong",
+        "ginger",
+        "green chilli"
+      ],
+      "tags": [
+        "telugu"
+      ]
+    }
+  ]
+}

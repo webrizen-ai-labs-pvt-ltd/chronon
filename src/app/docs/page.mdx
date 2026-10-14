@@ -1,0 +1,36 @@
+export const metadata = { title: "Introduction" };
+
+# Introduction
+
+<Lead>
+  Chronon is a set of free utility APIs built, hosted and maintained by Webrizen AI Labs. There's no paid plan and
+  nothing to buy. All you need is a Webrizen account and an API key.
+</Lead>
+
+## What's here
+
+| API | Status | What it does |
+| --- | --- | --- |
+| [Regional menus](/docs/api/menus) | Live | Dishes and regions with course, diet, spice level and ingredients |
+| Structured data feeds | Planned | Clean, versioned datasets behind one consistent API |
+| Automation tools | Planned | Small utilities you'd otherwise host yourself |
+
+## Why keys, if it's free?
+
+Chronon runs on Webrizen's own servers. A key tells us which account a request belongs to, so we can give every
+developer a fair share and stop one misconfigured script from taking the service down for everyone else.
+Keys are never used for billing. See [Limits & fair use](/docs/limits).
+
+## How it fits together
+
+1. You sign in to the [dashboard](/dashboard) with **Webrizen SSO**, the same account used across Webrizen products.
+2. You create an API key (up to five, one per project is a good habit).
+3. You call `https://chronon.webrizen.com/v1/…` with the key in the `Authorization` header.
+
+Every response is JSON, every error has the same shape, and every endpoint lives under `/v1`. When something
+changes incompatibly it will ship as `/v2`, and `/v1` keeps working.
+
+## Open source
+
+The whole service, including the datasets, is MIT-licensed. Found a wrong dish or want a new region? See
+[Contributing](/docs/contributing).

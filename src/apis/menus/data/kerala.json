@@ -1,0 +1,208 @@
+{
+  "slug": "kerala",
+  "name": "Kerala",
+  "kind": "state",
+  "country_code": "IN",
+  "country": "India",
+  "summary": "Coconut, curry leaves and coastal seafood, with Syrian Christian, Mappila and temple traditions side by side.",
+  "staples": [
+    "coconut",
+    "coconut oil",
+    "rice",
+    "curry leaves",
+    "black pepper"
+  ],
+  "dishes": [
+    {
+      "slug": "appam",
+      "name": "Appam",
+      "local_name": "അപ്പം",
+      "description": "Lacy fermented rice pancake with a soft, thick centre.",
+      "course": "breakfast",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "rice",
+        "coconut",
+        "yeast or toddy"
+      ],
+      "tags": [
+        "fermented"
+      ]
+    },
+    {
+      "slug": "vegetable-stew",
+      "name": "Vegetable Stew",
+      "local_name": "ഇഷ്ടു",
+      "description": "Mild coconut-milk stew, the classic partner to appam.",
+      "course": "main",
+      "diet": "vegan",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "coconut milk",
+        "potato",
+        "carrot",
+        "green chilli",
+        "whole spices"
+      ],
+      "tags": [
+        "mild"
+      ]
+    },
+    {
+      "slug": "puttu",
+      "name": "Puttu",
+      "local_name": "പുട്ട്",
+      "description": "Steamed cylinders of rice flour and coconut, eaten with kadala curry.",
+      "course": "breakfast",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "rice flour",
+        "grated coconut"
+      ],
+      "tags": [
+        "steamed"
+      ]
+    },
+    {
+      "slug": "kadala-curry",
+      "name": "Kadala Curry",
+      "local_name": "കടല കറി",
+      "description": "Black chickpeas in a roasted-coconut gravy.",
+      "course": "main",
+      "diet": "vegan",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "black chickpeas",
+        "roasted coconut",
+        "curry leaves"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "karimeen-pollichathu",
+      "name": "Karimeen Pollichathu",
+      "local_name": "കരിമീൻ പൊള്ളിച്ചത്",
+      "description": "Pearl spot fish coated in masala and cooked wrapped in banana leaf.",
+      "course": "main",
+      "diet": "pescatarian",
+      "spice_level": 3,
+      "price_level": 3,
+      "ingredients": [
+        "pearl spot fish",
+        "shallots",
+        "red chilli",
+        "banana leaf"
+      ],
+      "tags": [
+        "backwaters"
+      ]
+    },
+    {
+      "slug": "thalassery-biryani",
+      "name": "Thalassery Biryani",
+      "local_name": null,
+      "description": "Fragrant short-grain biryani from Malabar, lighter on chilli.",
+      "course": "rice",
+      "diet": "non_vegetarian",
+      "spice_level": 2,
+      "price_level": 2,
+      "ingredients": [
+        "kaima rice",
+        "chicken",
+        "ghee",
+        "fried onions",
+        "cashews"
+      ],
+      "tags": [
+        "malabar"
+      ]
+    },
+    {
+      "slug": "avial",
+      "name": "Avial",
+      "local_name": "അവിയൽ",
+      "description": "Mixed vegetables in coconut and curd, a fixture of the sadya feast.",
+      "course": "side",
+      "diet": "vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "mixed vegetables",
+        "coconut",
+        "curd",
+        "coconut oil",
+        "curry leaves"
+      ],
+      "tags": [
+        "sadya"
+      ]
+    },
+    {
+      "slug": "beef-ularthiyathu",
+      "name": "Beef Ularthiyathu",
+      "local_name": "ബീഫ് ഉലർത്തിയത്",
+      "description": "Dry-roasted beef with coconut slivers and black pepper.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 3,
+      "price_level": 2,
+      "ingredients": [
+        "beef",
+        "coconut slivers",
+        "black pepper",
+        "curry leaves"
+      ],
+      "tags": [
+        "dry-roast"
+      ]
+    },
+    {
+      "slug": "pazham-pori",
+      "name": "Pazham Pori",
+      "local_name": "പഴംപൊരി",
+      "description": "Ripe plantain fritters, the tea-shop snack.",
+      "course": "snack",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "ripe nendran banana",
+        "flour",
+        "sugar"
+      ],
+      "tags": [
+        "fried",
+        "tea-time"
+      ]
+    },
+    {
+      "slug": "ada-pradhaman",
+      "name": "Ada Pradhaman",
+      "local_name": "അട പ്രഥമൻ",
+      "description": "Rice flakes in jaggery and coconut milk, the sweet finale of an Onam sadya.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "rice flakes",
+        "jaggery",
+        "coconut milk",
+        "ghee",
+        "cashews"
+      ],
+      "tags": [
+        "sadya",
+        "onam"
+      ]
+    }
+  ]
+}

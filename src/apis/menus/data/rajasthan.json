@@ -1,0 +1,190 @@
+{
+  "slug": "rajasthan",
+  "name": "Rajasthan",
+  "kind": "state",
+  "country_code": "IN",
+  "country": "India",
+  "summary": "Desert cooking built to last: pulses, dried beans, ghee and very little fresh water.",
+  "staples": [
+    "pearl millet",
+    "gram flour",
+    "ghee",
+    "dried ker and sangri",
+    "red chillies"
+  ],
+  "dishes": [
+    {
+      "slug": "dal-baati-churma",
+      "name": "Dal Baati Churma",
+      "local_name": "दाल बाटी चूरमा",
+      "description": "Baked wheat balls dunked in ghee, served with spiced lentils and sweet crumbled churma.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "wheat",
+        "ghee",
+        "mixed lentils",
+        "jaggery"
+      ],
+      "tags": [
+        "baked"
+      ]
+    },
+    {
+      "slug": "laal-maas",
+      "name": "Laal Maas",
+      "local_name": "लाल मांस",
+      "description": "Fiery mutton curry coloured deep red by Mathania chillies.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 5,
+      "price_level": 2,
+      "ingredients": [
+        "mutton",
+        "Mathania chillies",
+        "yogurt",
+        "garlic",
+        "ghee"
+      ],
+      "tags": [
+        "fiery"
+      ]
+    },
+    {
+      "slug": "gatte-ki-sabzi",
+      "name": "Gatte ki Sabzi",
+      "local_name": "गट्टे की सब्ज़ी",
+      "description": "Boiled gram-flour dumplings in a tangy yogurt curry.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "gram flour dumplings",
+        "yogurt",
+        "spices"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "ker-sangri",
+      "name": "Ker Sangri",
+      "local_name": "केर सांगरी",
+      "description": "Dried desert berries and beans cooked with spices; keeps for days.",
+      "course": "side",
+      "diet": "vegan",
+      "spice_level": 2,
+      "price_level": 2,
+      "ingredients": [
+        "ker berries",
+        "sangri beans",
+        "dried red chilli",
+        "amchur"
+      ],
+      "tags": [
+        "desert",
+        "dried"
+      ]
+    },
+    {
+      "slug": "pyaaz-kachori",
+      "name": "Pyaaz Kachori",
+      "local_name": "प्याज़ कचौरी",
+      "description": "Flaky fried pastry stuffed with spiced onions, a Jodhpur favourite.",
+      "course": "snack",
+      "diet": "vegan",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "flour",
+        "onion",
+        "fennel",
+        "spices"
+      ],
+      "tags": [
+        "fried",
+        "street-food"
+      ]
+    },
+    {
+      "slug": "mirchi-vada",
+      "name": "Mirchi Vada",
+      "local_name": "मिर्ची वड़ा",
+      "description": "Large chillies stuffed with spiced potato and fried in gram-flour batter.",
+      "course": "snack",
+      "diet": "vegan",
+      "spice_level": 3,
+      "price_level": 1,
+      "ingredients": [
+        "large green chillies",
+        "potato",
+        "gram flour"
+      ],
+      "tags": [
+        "fried",
+        "street-food"
+      ]
+    },
+    {
+      "slug": "ghevar",
+      "name": "Ghevar",
+      "local_name": "घेवर",
+      "description": "Honeycomb-like fried disc soaked in syrup, made for Teej and Raksha Bandhan.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "flour",
+        "ghee",
+        "sugar syrup",
+        "rabri"
+      ],
+      "tags": [
+        "festive",
+        "monsoon"
+      ]
+    },
+    {
+      "slug": "bajre-ki-roti",
+      "name": "Bajre ki Roti",
+      "local_name": "बाजरे की रोटी",
+      "description": "Pearl-millet flatbread, usually eaten with garlic chutney and ghee.",
+      "course": "bread",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "pearl millet flour",
+        "water"
+      ],
+      "tags": [
+        "millet"
+      ]
+    },
+    {
+      "slug": "mohan-maas",
+      "name": "Mohan Maas",
+      "local_name": "मोहन मांस",
+      "description": "Mild, royal-kitchen mutton cooked in milk and cream.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 1,
+      "price_level": 3,
+      "ingredients": [
+        "mutton",
+        "milk",
+        "cream",
+        "dry fruits",
+        "mild spices"
+      ],
+      "tags": [
+        "royal"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "slug": "maharashtra",
+  "name": "Maharashtra",
+  "kind": "state",
+  "country_code": "IN",
+  "country": "India",
+  "summary": "From Mumbai street snacks to fiery Kolhapuri curries, built on peanuts, coconut and goda masala.",
+  "staples": [
+    "peanuts",
+    "coconut",
+    "kokum",
+    "jowar",
+    "goda masala"
+  ],
+  "dishes": [
+    {
+      "slug": "vada-pav",
+      "name": "Vada Pav",
+      "local_name": "वडा पाव",
+      "description": "Spiced potato fritter in a soft bun with dry garlic chutney; Mumbai's everyday meal.",
+      "course": "snack",
+      "diet": "vegetarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "potato",
+        "gram flour",
+        "pav",
+        "dry garlic chutney"
+      ],
+      "tags": [
+        "street-food"
+      ]
+    },
+    {
+      "slug": "pav-bhaji",
+      "name": "Pav Bhaji",
+      "local_name": "पाव भाजी",
+      "description": "Buttery mashed vegetable curry with toasted buns.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "mixed vegetables",
+        "butter",
+        "pav bhaji masala",
+        "pav"
+      ],
+      "tags": [
+        "street-food"
+      ]
+    },
+    {
+      "slug": "misal-pav",
+      "name": "Misal Pav",
+      "local_name": "मिसळ पाव",
+      "description": "Sprouted-bean curry topped with crunchy farsan and eaten with pav.",
+      "course": "breakfast",
+      "diet": "vegetarian",
+      "spice_level": 4,
+      "price_level": 1,
+      "ingredients": [
+        "sprouted moth beans",
+        "farsan",
+        "onion",
+        "pav"
+      ],
+      "tags": [
+        "spicy"
+      ]
+    },
+    {
+      "slug": "kanda-poha",
+      "name": "Kanda Poha",
+      "local_name": "कांदा पोहे",
+      "description": "Flattened rice with onion, peanuts and turmeric.",
+      "course": "breakfast",
+      "diet": "vegan",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "flattened rice",
+        "onion",
+        "peanuts",
+        "turmeric",
+        "curry leaves"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "puran-poli",
+      "name": "Puran Poli",
+      "local_name": "पुरणपोळी",
+      "description": "Flatbread stuffed with sweet lentil-jaggery filling, made for Holi and Gudi Padwa.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "chana dal",
+        "jaggery",
+        "wheat flour",
+        "cardamom",
+        "ghee"
+      ],
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "slug": "tambda-rassa",
+      "name": "Tambda Rassa",
+      "local_name": "तांबडा रस्सा",
+      "description": "Fiery red mutton broth from Kolhapur, served with the mild white pandhra rassa.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 5,
+      "price_level": 2,
+      "ingredients": [
+        "mutton",
+        "Kolhapuri masala",
+        "coconut",
+        "dried chillies"
+      ],
+      "tags": [
+        "kolhapur",
+        "fiery"
+      ]
+    },
+    {
+      "slug": "sabudana-khichdi",
+      "name": "Sabudana Khichdi",
+      "local_name": "साबुदाणा खिचडी",
+      "description": "Sago pearls tossed with crushed peanuts; a fasting-day staple.",
+      "course": "breakfast",
+      "diet": "vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "sago pearls",
+        "peanuts",
+        "potato",
+        "green chilli"
+      ],
+      "tags": [
+        "fasting"
+      ]
+    },
+    {
+      "slug": "ukadiche-modak",
+      "name": "Ukadiche Modak",
+      "local_name": "उकडीचे मोदक",
+      "description": "Steamed rice dumplings with coconut-jaggery filling, offered at Ganesh Chaturthi.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "rice flour",
+        "coconut",
+        "jaggery",
+        "ghee"
+      ],
+      "tags": [
+        "festive",
+        "steamed"
+      ]
+    },
+    {
+      "slug": "sol-kadhi",
+      "name": "Sol Kadhi",
+      "local_name": "सोलकढी",
+      "description": "Pink kokum and coconut-milk drink from the Konkan coast.",
+      "course": "beverage",
+      "diet": "vegan",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "kokum",
+        "coconut milk",
+        "garlic",
+        "green chilli"
+      ],
+      "tags": [
+        "konkan",
+        "digestive"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "slug": "italy",
+  "name": "Italy",
+  "kind": "country",
+  "country_code": "IT",
+  "country": "Italy",
+  "summary": "Fiercely regional: butter and rice in the north, olive oil, tomatoes and dried pasta in the south.",
+  "staples": [
+    "durum wheat pasta",
+    "olive oil",
+    "tomatoes",
+    "Parmigiano Reggiano",
+    "basil"
+  ],
+  "dishes": [
+    {
+      "slug": "pizza-margherita",
+      "name": "Pizza Margherita",
+      "local_name": null,
+      "description": "Neapolitan pizza baked for about 90 seconds in a wood-fired oven.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "dough",
+        "San Marzano tomatoes",
+        "mozzarella",
+        "basil",
+        "olive oil"
+      ],
+      "tags": [
+        "naples"
+      ]
+    },
+    {
+      "slug": "spaghetti-alla-carbonara",
+      "name": "Spaghetti alla Carbonara",
+      "local_name": null,
+      "description": "Roman pasta of guanciale, egg and pecorino; no cream.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "spaghetti",
+        "guanciale",
+        "egg yolk",
+        "pecorino romano",
+        "black pepper"
+      ],
+      "tags": [
+        "rome"
+      ]
+    },
+    {
+      "slug": "cacio-e-pepe",
+      "name": "Cacio e Pepe",
+      "local_name": null,
+      "description": "Pasta emulsified with pecorino and black pepper.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "tonnarelli",
+        "pecorino romano",
+        "black pepper"
+      ],
+      "tags": [
+        "rome"
+      ]
+    },
+    {
+      "slug": "risotto-alla-milanese",
+      "name": "Risotto alla Milanese",
+      "local_name": null,
+      "description": "Saffron risotto, traditionally enriched with beef marrow.",
+      "course": "rice",
+      "diet": "non_vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "carnaroli rice",
+        "saffron",
+        "beef marrow",
+        "butter",
+        "Parmigiano Reggiano"
+      ],
+      "tags": [
+        "milan"
+      ]
+    },
+    {
+      "slug": "lasagne-alla-bolognese",
+      "name": "Lasagne alla Bolognese",
+      "local_name": null,
+      "description": "Egg pasta (traditionally spinach-green) layered with ragù and béchamel.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "egg pasta",
+        "ragù",
+        "béchamel",
+        "Parmigiano Reggiano"
+      ],
+      "tags": [
+        "bologna"
+      ]
+    },
+    {
+      "slug": "trofie-al-pesto",
+      "name": "Trofie al Pesto",
+      "local_name": null,
+      "description": "Basil pounded with pine nuts and cheese, tossed with twisted trofie.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "trofie",
+        "basil",
+        "pine nuts",
+        "Parmigiano Reggiano",
+        "pecorino",
+        "olive oil"
+      ],
+      "tags": [
+        "liguria"
+      ]
+    },
+    {
+      "slug": "arancini",
+      "name": "Arancini",
+      "local_name": null,
+      "description": "Fried rice balls filled with ragù, Sicily's street snack.",
+      "course": "snack",
+      "diet": "non_vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "rice",
+        "ragù",
+        "peas",
+        "mozzarella",
+        "breadcrumbs"
+      ],
+      "tags": [
+        "sicily",
+        "street-food"
+      ]
+    },
+    {
+      "slug": "tiramisu",
+      "name": "Tiramisù",
+      "local_name": null,
+      "description": "Coffee-soaked biscuits layered with mascarpone cream.",
+      "course": "dessert",
+      "diet": "eggetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "savoiardi",
+        "espresso",
+        "mascarpone",
+        "egg",
+        "cocoa"
+      ],
+      "tags": [
+        "veneto"
+      ]
+    },
+    {
+      "slug": "espresso",
+      "name": "Espresso",
+      "local_name": null,
+      "description": "A short, concentrated coffee, often drunk standing at the bar.",
+      "course": "beverage",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "coffee"
+      ],
+      "tags": [
+        "bar"
+      ]
+    }
+  ]
+}

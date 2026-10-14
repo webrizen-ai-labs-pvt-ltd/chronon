@@ -1,0 +1,197 @@
+{
+  "slug": "thailand",
+  "name": "Thailand",
+  "kind": "country",
+  "country_code": "TH",
+  "country": "Thailand",
+  "summary": "A balance of sour, sweet, salty and hot, with fresh herbs, fish sauce and distinct regional styles.",
+  "staples": [
+    "jasmine rice",
+    "fish sauce",
+    "lemongrass",
+    "galangal",
+    "bird's eye chilli"
+  ],
+  "dishes": [
+    {
+      "slug": "pad-thai",
+      "name": "Pad Thai",
+      "local_name": "ผัดไทย",
+      "description": "Stir-fried rice noodles with tamarind, egg and peanuts.",
+      "course": "main",
+      "diet": "pescatarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "rice noodles",
+        "tamarind",
+        "fish sauce",
+        "egg",
+        "peanuts",
+        "prawns"
+      ],
+      "tags": [
+        "street-food"
+      ]
+    },
+    {
+      "slug": "tom-yum-goong",
+      "name": "Tom Yum Goong",
+      "local_name": "ต้มยำกุ้ง",
+      "description": "Hot-and-sour prawn soup.",
+      "course": "main",
+      "diet": "pescatarian",
+      "spice_level": 4,
+      "price_level": 2,
+      "ingredients": [
+        "prawns",
+        "lemongrass",
+        "galangal",
+        "kaffir lime leaves",
+        "chilli",
+        "lime"
+      ],
+      "tags": [
+        "soup"
+      ]
+    },
+    {
+      "slug": "green-curry",
+      "name": "Green Curry",
+      "local_name": "แกงเขียวหวาน",
+      "description": "Coconut curry built on a fresh green chilli paste.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 4,
+      "price_level": 1,
+      "ingredients": [
+        "green chillies",
+        "coconut milk",
+        "chicken",
+        "Thai eggplant",
+        "Thai basil"
+      ],
+      "tags": [
+        "curry"
+      ]
+    },
+    {
+      "slug": "som-tam",
+      "name": "Som Tam",
+      "local_name": "ส้มตำ",
+      "description": "Pounded green papaya salad, sour and fiery.",
+      "course": "side",
+      "diet": "pescatarian",
+      "spice_level": 4,
+      "price_level": 1,
+      "ingredients": [
+        "green papaya",
+        "chilli",
+        "lime",
+        "fish sauce",
+        "dried shrimp",
+        "peanuts"
+      ],
+      "tags": [
+        "isan"
+      ]
+    },
+    {
+      "slug": "massaman-curry",
+      "name": "Massaman Curry",
+      "local_name": "แกงมัสมั่น",
+      "description": "Mild, warmly spiced curry with Persian and Malay roots.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 2,
+      "price_level": 2,
+      "ingredients": [
+        "beef",
+        "coconut milk",
+        "potato",
+        "peanuts",
+        "cardamom",
+        "cinnamon"
+      ],
+      "tags": [
+        "curry"
+      ]
+    },
+    {
+      "slug": "khao-soi",
+      "name": "Khao Soi",
+      "local_name": "ข้าวซอย",
+      "description": "Northern curry-noodle soup topped with crispy noodles.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 3,
+      "price_level": 1,
+      "ingredients": [
+        "egg noodles",
+        "coconut curry",
+        "chicken",
+        "crispy noodles",
+        "pickled mustard greens"
+      ],
+      "tags": [
+        "chiang mai"
+      ]
+    },
+    {
+      "slug": "pad-kra-pao",
+      "name": "Pad Kra Pao",
+      "local_name": "ผัดกะเพรา",
+      "description": "Holy-basil stir-fry served over rice with a fried egg.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 4,
+      "price_level": 1,
+      "ingredients": [
+        "minced pork or chicken",
+        "holy basil",
+        "chilli",
+        "garlic",
+        "fried egg"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "mango-sticky-rice",
+      "name": "Mango Sticky Rice",
+      "local_name": "ข้าวเหนียวมะม่วง",
+      "description": "Sweet coconut sticky rice with ripe mango.",
+      "course": "dessert",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "glutinous rice",
+        "coconut milk",
+        "ripe mango"
+      ],
+      "tags": [
+        "seasonal"
+      ]
+    },
+    {
+      "slug": "thai-iced-tea",
+      "name": "Thai Iced Tea",
+      "local_name": "ชาเย็น",
+      "description": "Strong spiced tea poured over ice with condensed milk.",
+      "course": "beverage",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "black tea",
+        "condensed milk",
+        "sugar"
+      ],
+      "tags": [
+        "street-food"
+      ]
+    }
+  ]
+}

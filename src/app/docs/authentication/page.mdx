@@ -1,0 +1,50 @@
+export const metadata = { title: "Authentication" };
+
+# Authentication
+
+<Lead>Every `/v1` endpoint except the index at `GET /v1` needs an API key.</Lead>
+
+## Sending your key
+
+Use a bearer token (preferred):
+
+```http
+Authorization: Bearer chr_ab12cd34_5Xq9…
+```
+
+or the `X-API-Key` header, if your HTTP client makes custom auth headers awkward:
+
+```http
+X-API-Key: chr_ab12cd34_5Xq9…
+```
+
+Keys in the query string are not accepted, because URLs end up in logs.
+
+## Key format
+
+A key is `chr_` + an 8-character **key id** + `_` + a 32-character secret. The id is public: it shows in the
+dashboard and in `/v1/ping` responses so you can tell keys apart. The secret is shown only once, when you create
+the key. Chronon stores a SHA-256 hash of the whole key, never the key itself.
+
+## Managing keys
+
+In the [dashboard](/dashboard) you can:
+
+- create up to **5 active keys** per account,
+- see when each key was last used (updated about every five minutes),
+- revoke a key. Revoked keys stop working within a minute.
+
+Limits apply to your **account**, not to each key, so extra keys don't add capacity. They let you rotate keys and
+revoke one project without breaking the others.
+
+## Keeping keys safe
+
+- Keep keys in environment variables or a secrets manager, not in your repository.
+- Prefer calling Chronon from a server. Calling from the browser works (CORS is open), but anyone can read a key
+  shipped in front-end code and use up your quota.
+- If a key leaks, revoke it and create a new one. Nothing else is tied to it.
+
+## Failed attempts
+
+Requests with unknown keys are limited per IP address. After repeated failures you'll get
+`429 too_many_failed_attempts` for about a minute. See [Errors](/docs/errors).

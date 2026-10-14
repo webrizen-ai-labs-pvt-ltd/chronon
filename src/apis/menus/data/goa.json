@@ -1,0 +1,188 @@
+{
+  "slug": "goa",
+  "name": "Goa",
+  "kind": "state",
+  "country_code": "IN",
+  "country": "India",
+  "summary": "Konkani coastal cooking meets four centuries of Portuguese influence: coconut, kokum, vinegar and seafood.",
+  "staples": [
+    "coconut",
+    "kokum",
+    "toddy vinegar",
+    "red chillies",
+    "seafood"
+  ],
+  "dishes": [
+    {
+      "slug": "goan-fish-curry",
+      "name": "Goan Fish Curry",
+      "local_name": null,
+      "description": "Coconut fish curry soured with kokum, eaten daily with rice.",
+      "course": "main",
+      "diet": "pescatarian",
+      "spice_level": 3,
+      "price_level": 2,
+      "ingredients": [
+        "kingfish or pomfret",
+        "coconut",
+        "kokum",
+        "red chillies"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "pork-vindaloo",
+      "name": "Pork Vindaloo",
+      "local_name": null,
+      "description": "Pork marinated in vinegar and garlic, descended from the Portuguese carne de vinha d'alhos.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 4,
+      "price_level": 2,
+      "ingredients": [
+        "pork",
+        "vinegar",
+        "garlic",
+        "Kashmiri chillies"
+      ],
+      "tags": [
+        "portuguese-influenced"
+      ]
+    },
+    {
+      "slug": "chicken-xacuti",
+      "name": "Chicken Xacuti",
+      "local_name": null,
+      "description": "Chicken in a deep gravy of roasted coconut and whole spices.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 3,
+      "price_level": 2,
+      "ingredients": [
+        "chicken",
+        "roasted coconut",
+        "poppy seeds",
+        "Kashmiri chillies",
+        "whole spices"
+      ],
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "slug": "prawn-balchao",
+      "name": "Prawn Balchão",
+      "local_name": null,
+      "description": "Tangy, fiery prawn pickle-curry that keeps for days.",
+      "course": "main",
+      "diet": "pescatarian",
+      "spice_level": 4,
+      "price_level": 2,
+      "ingredients": [
+        "prawns",
+        "vinegar",
+        "red chillies",
+        "garlic"
+      ],
+      "tags": [
+        "pickle"
+      ]
+    },
+    {
+      "slug": "bebinca",
+      "name": "Bebinca",
+      "local_name": null,
+      "description": "Layered coconut-milk cake baked one layer at a time, made for Christmas.",
+      "course": "dessert",
+      "diet": "eggetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "egg yolks",
+        "coconut milk",
+        "sugar",
+        "ghee"
+      ],
+      "tags": [
+        "layered",
+        "christmas"
+      ]
+    },
+    {
+      "slug": "ros-omelette",
+      "name": "Ros Omelette",
+      "local_name": null,
+      "description": "Omelette drowned in spicy chicken gravy, sold from evening carts.",
+      "course": "snack",
+      "diet": "non_vegetarian",
+      "spice_level": 3,
+      "price_level": 1,
+      "ingredients": [
+        "eggs",
+        "chicken xacuti gravy",
+        "pav"
+      ],
+      "tags": [
+        "street-food"
+      ]
+    },
+    {
+      "slug": "sorpotel",
+      "name": "Sorpotel",
+      "local_name": null,
+      "description": "Pork and offal in a vinegary spice gravy, better on the second day.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 4,
+      "price_level": 2,
+      "ingredients": [
+        "pork",
+        "offal",
+        "vinegar",
+        "red chillies"
+      ],
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "slug": "poi",
+      "name": "Poi",
+      "local_name": null,
+      "description": "Hollow Goan bread with a bran crust, traditionally leavened with toddy.",
+      "course": "bread",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "wheat flour",
+        "bran",
+        "toddy"
+      ],
+      "tags": [
+        "bakery"
+      ]
+    },
+    {
+      "slug": "sannas",
+      "name": "Sannas",
+      "local_name": null,
+      "description": "Soft steamed rice cakes leavened with toddy, served with sorpotel.",
+      "course": "bread",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "rice",
+        "coconut",
+        "toddy"
+      ],
+      "tags": [
+        "steamed",
+        "fermented"
+      ]
+    }
+  ]
+}

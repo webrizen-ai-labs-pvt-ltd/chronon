@@ -1,0 +1,197 @@
+{
+  "slug": "gujarat",
+  "name": "Gujarat",
+  "kind": "state",
+  "country_code": "IN",
+  "country": "India",
+  "summary": "Largely vegetarian and famously balanced: sweet, salty and tangy notes in one thali.",
+  "staples": [
+    "gram flour",
+    "jaggery",
+    "yogurt",
+    "peanuts",
+    "millet"
+  ],
+  "dishes": [
+    {
+      "slug": "dhokla",
+      "name": "Dhokla",
+      "local_name": "ઢોકળા",
+      "description": "Spongy steamed savoury cake tempered with mustard seeds and curry leaves.",
+      "course": "snack",
+      "diet": "vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "gram flour",
+        "yogurt",
+        "ginger",
+        "mustard seeds",
+        "curry leaves"
+      ],
+      "tags": [
+        "steamed",
+        "fermented"
+      ]
+    },
+    {
+      "slug": "khandvi",
+      "name": "Khandvi",
+      "local_name": "ખાંડવી",
+      "description": "Thin gram-flour sheets rolled into soft spirals.",
+      "course": "snack",
+      "diet": "vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "gram flour",
+        "yogurt",
+        "mustard seeds",
+        "coconut",
+        "coriander"
+      ],
+      "tags": [
+        "rolled"
+      ]
+    },
+    {
+      "slug": "thepla",
+      "name": "Thepla",
+      "local_name": "થેપલા",
+      "description": "Spiced fenugreek flatbread that keeps for days.",
+      "course": "bread",
+      "diet": "vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "wheat flour",
+        "fenugreek leaves",
+        "yogurt",
+        "spices"
+      ],
+      "tags": [
+        "travel-food"
+      ]
+    },
+    {
+      "slug": "undhiyu",
+      "name": "Undhiyu",
+      "local_name": "ઊંધિયું",
+      "description": "Winter mixed-vegetable dish, traditionally cooked upside-down in a sealed earthen pot.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 2,
+      "price_level": 2,
+      "ingredients": [
+        "surti papdi",
+        "purple yam",
+        "baby potatoes",
+        "eggplant",
+        "fenugreek dumplings"
+      ],
+      "tags": [
+        "winter",
+        "festive"
+      ]
+    },
+    {
+      "slug": "gujarati-kadhi",
+      "name": "Gujarati Kadhi",
+      "local_name": "ગુજરાતી કઢી",
+      "description": "Thin, sweet-sour yogurt soup thickened with gram flour.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "yogurt",
+        "gram flour",
+        "jaggery",
+        "ginger",
+        "curry leaves"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "fafda",
+      "name": "Fafda",
+      "local_name": "ફાફડા",
+      "description": "Crisp gram-flour strips, paired with jalebi for a Sunday breakfast.",
+      "course": "snack",
+      "diet": "vegan",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "gram flour",
+        "carom seeds",
+        "salt"
+      ],
+      "tags": [
+        "fried",
+        "breakfast"
+      ]
+    },
+    {
+      "slug": "handvo",
+      "name": "Handvo",
+      "local_name": "હાંડવો",
+      "description": "Savoury baked cake of fermented rice-lentil batter with a sesame crust.",
+      "course": "snack",
+      "diet": "vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "rice",
+        "lentils",
+        "bottle gourd",
+        "yogurt",
+        "sesame"
+      ],
+      "tags": [
+        "baked",
+        "fermented"
+      ]
+    },
+    {
+      "slug": "shrikhand",
+      "name": "Shrikhand",
+      "local_name": "શ્રીખંડ",
+      "description": "Strained yogurt sweetened and flavoured with saffron and cardamom.",
+      "course": "dessert",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 2,
+      "ingredients": [
+        "hung yogurt",
+        "sugar",
+        "saffron",
+        "cardamom"
+      ],
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "slug": "dal-dhokli",
+      "name": "Dal Dhokli",
+      "local_name": "દાળ ઢોકળી",
+      "description": "Spiced wheat-flour pieces simmered in sweet-sour toor dal.",
+      "course": "main",
+      "diet": "vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "toor dal",
+        "wheat flour",
+        "jaggery",
+        "kokum",
+        "peanuts"
+      ],
+      "tags": [
+        "one-pot"
+      ]
+    }
+  ]
+}

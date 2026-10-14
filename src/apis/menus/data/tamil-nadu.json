@@ -1,0 +1,190 @@
+{
+  "slug": "tamil-nadu",
+  "name": "Tamil Nadu",
+  "kind": "state",
+  "country_code": "IN",
+  "country": "India",
+  "summary": "Rice, tamarind and lentils at the core: tiffin breakfasts, Chettinad spice and temple sweets.",
+  "staples": [
+    "rice",
+    "urad dal",
+    "tamarind",
+    "curry leaves",
+    "sesame oil"
+  ],
+  "dishes": [
+    {
+      "slug": "idli",
+      "name": "Idli",
+      "local_name": "இட்லி",
+      "description": "Soft steamed cakes of fermented rice and lentil batter.",
+      "course": "breakfast",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "rice",
+        "urad dal"
+      ],
+      "tags": [
+        "steamed",
+        "fermented"
+      ]
+    },
+    {
+      "slug": "dosa",
+      "name": "Dosa",
+      "local_name": "தோசை",
+      "description": "Thin, crisp fermented crepe, served with sambar and chutneys.",
+      "course": "breakfast",
+      "diet": "vegan",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "rice",
+        "urad dal"
+      ],
+      "tags": [
+        "fermented"
+      ]
+    },
+    {
+      "slug": "sambar",
+      "name": "Sambar",
+      "local_name": "சாம்பார்",
+      "description": "Tamarind-lentil stew with vegetables, eaten at almost every meal.",
+      "course": "side",
+      "diet": "vegan",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "toor dal",
+        "tamarind",
+        "vegetables",
+        "sambar powder"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "chettinad-chicken",
+      "name": "Chettinad Chicken",
+      "local_name": "செட்டிநாடு கோழி",
+      "description": "Pepper-forward chicken curry from the Chettiar kitchens around Karaikudi.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 4,
+      "price_level": 2,
+      "ingredients": [
+        "chicken",
+        "kalpasi",
+        "star anise",
+        "black pepper",
+        "coconut"
+      ],
+      "tags": [
+        "chettinad"
+      ]
+    },
+    {
+      "slug": "ven-pongal",
+      "name": "Ven Pongal",
+      "local_name": "வெண் பொங்கல்",
+      "description": "Rice and moong dal porridge with ghee and whole peppercorns.",
+      "course": "breakfast",
+      "diet": "vegetarian",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "rice",
+        "moong dal",
+        "ghee",
+        "black pepper",
+        "cumin",
+        "cashews"
+      ],
+      "tags": [
+        "comfort"
+      ]
+    },
+    {
+      "slug": "rasam",
+      "name": "Rasam",
+      "local_name": "ரசம்",
+      "description": "Thin, peppery tamarind broth, sipped or poured over rice.",
+      "course": "side",
+      "diet": "vegan",
+      "spice_level": 2,
+      "price_level": 1,
+      "ingredients": [
+        "tamarind",
+        "tomato",
+        "black pepper",
+        "cumin",
+        "garlic"
+      ],
+      "tags": [
+        "everyday",
+        "digestive"
+      ]
+    },
+    {
+      "slug": "kothu-parotta",
+      "name": "Kothu Parotta",
+      "local_name": "கொத்து பரோட்டா",
+      "description": "Shredded parotta stir-fried with egg and gravy on a clanging griddle.",
+      "course": "main",
+      "diet": "non_vegetarian",
+      "spice_level": 3,
+      "price_level": 1,
+      "ingredients": [
+        "parotta",
+        "egg",
+        "salna",
+        "onion"
+      ],
+      "tags": [
+        "street-food"
+      ]
+    },
+    {
+      "slug": "filter-coffee",
+      "name": "Filter Coffee",
+      "local_name": "ஃபில்டர் காபி",
+      "description": "Strong decoction with hot milk, frothed between tumbler and dabarah.",
+      "course": "beverage",
+      "diet": "vegetarian",
+      "spice_level": 0,
+      "price_level": 1,
+      "ingredients": [
+        "coffee",
+        "chicory",
+        "milk",
+        "sugar"
+      ],
+      "tags": [
+        "everyday"
+      ]
+    },
+    {
+      "slug": "kuzhi-paniyaram",
+      "name": "Kuzhi Paniyaram",
+      "local_name": "குழிப் பணியாரம்",
+      "description": "Dumplings of fermented batter cooked in a dimpled cast-iron pan.",
+      "course": "snack",
+      "diet": "vegan",
+      "spice_level": 1,
+      "price_level": 1,
+      "ingredients": [
+        "idli batter",
+        "onion",
+        "green chilli",
+        "curry leaves"
+      ],
+      "tags": [
+        "tea-time"
+      ]
+    }
+  ]
+}
