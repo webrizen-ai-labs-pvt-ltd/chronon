@@ -108,8 +108,8 @@ tests/                 Vitest suites
 Vercel (Hobby) + Neon Postgres + Upstash Redis, all on free tiers. Step by step:
 [`src/app/docs/deployment/page.mdx`](src/app/docs/deployment/page.mdx).
 
-> **Note:** `@webrizen/sso` is currently installed from a sibling checkout (`file:../webrizen-sso/packages/sdk`).
-> Publish it to npm and change the dependency to `"@webrizen/sso": "^0.1.0"` before deploying or running CI.
+> **Note:** the Webrizen SSO client is vendored in `src/lib/webrizen-sso/` until `@webrizen/sso` is published to
+> npm. After that, delete the folder and depend on the package instead.
 
 ## Brand
 

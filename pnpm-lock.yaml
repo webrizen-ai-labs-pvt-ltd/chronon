@@ -23,18 +23,21 @@ importers:
       '@upstash/redis':
         specifier: ^1.35.3
         version: 1.39.0
-      '@webrizen/sso':
-        specifier: file:../webrizen-sso/packages/sdk
-        version: file:../webrizen-sso/packages/sdk(next@16.3.7(@babel/core@7.29.7)(@types/node@24.19.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
       drizzle-orm:
         specifier: ^0.45.3
         version: 0.45.4(@upstash/redis@1.39.0)(pg@8.23.1)(postgres@3.4.9)
+      jose:
+        specifier: ^6.2.12
+        version: 6.2.12
       next:
         specifier: 16.3.7
         version: 16.3.7(@babel/core@7.29.7)(@types/node@24.19.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      openid-client:
+        specifier: ^6.8.8
+        version: 6.8.8
       postgres:
         specifier: ^3.4.9
         version: 3.4.9
@@ -1591,14 +1594,6 @@ packages:
 
   '@vitest/utils@3.2.7':
     resolution: {integrity: sha512-x6BDOd7dyo3PFLY3I9/HJ25X/6OurhGXk2/B9gOZNPF7XDVjeBK4k01lQE5uvDpbuheErh91qYuE1E2OEjK3Rw==}
-
-  '@webrizen/sso@file:../webrizen-sso/packages/sdk':
-    resolution: {directory: ../webrizen-sso/packages/sdk, type: directory}
-    peerDependencies:
-      next: '>=15'
-    peerDependenciesMeta:
-      next:
-        optional: true
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -4807,13 +4802,6 @@ snapshots:
       '@vitest/pretty-format': 3.2.7
       loupe: 3.2.1
       tinyrainbow: 2.0.0
-
-  '@webrizen/sso@file:../webrizen-sso/packages/sdk(next@16.3.7(@babel/core@7.29.7)(@types/node@24.19.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))':
-    dependencies:
-      jose: 6.2.12
-      openid-client: 6.8.8
-    optionalDependencies:
-      next: 16.3.7(@babel/core@7.29.7)(@types/node@24.19.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
 
   acorn-jsx@5.3.2(acorn@8.19.0):
     dependencies:

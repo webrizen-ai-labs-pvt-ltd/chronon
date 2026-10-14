@@ -15,7 +15,6 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-      # Requires @webrizen/sso to be installable from npm (see README).
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm typecheck

@@ -1,5 +1,5 @@
 import "server-only";
-import { createWebrizenAuth, fromEnv } from "@webrizen/sso/next";
+import { createWebrizenAuth, fromEnv } from "@/lib/webrizen-sso/next";
 
 type WebrizenAuth = ReturnType<typeof createWebrizenAuth>;
 let instance: WebrizenAuth | undefined;
