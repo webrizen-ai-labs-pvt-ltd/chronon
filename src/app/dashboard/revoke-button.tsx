@@ -1,19 +1,30 @@
 "use client";
 
+import { Trash01 } from "@untitledui/icons";
 import { useFormStatus } from "react-dom";
+import { Button } from "@/components/base/buttons/button";
+import { revokeKeyAction } from "./actions";
 
-export function RevokeButton({ name }: { name: string }) {
+function Submit() {
   const { pending } = useFormStatus();
   return (
-    <button
-      type="submit"
-      disabled={pending}
-      className="btn btn-outline px-3 py-1.5 text-[13px]"
-      onClick={(e) => {
+    <Button type="submit" color="secondary-destructive" size="sm" iconLeading={Trash01} isLoading={pending} showTextWhileLoading>
+      Revoke
+    </Button>
+  );
+}
+
+/** Revoke form with a confirmation step. */
+export function RevokeForm({ id, name }: { id: string; name: string }) {
+  return (
+    <form
+      action={revokeKeyAction}
+      onSubmit={(e) => {
         if (!confirm(`Revoke "${name}"? Apps using it will stop working within a minute.`)) e.preventDefault();
       }}
     >
-      {pending ? "Revoking…" : "Revoke"}
-    </button>
+      <input type="hidden" name="id" value={id} />
+      <Submit />
+    </form>
   );
 }

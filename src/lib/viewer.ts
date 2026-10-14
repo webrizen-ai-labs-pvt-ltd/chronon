@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { cache } from "react";
 import { getDb } from "@/lib/db";
 import { users, type User } from "@/lib/db/schema";
-import { webrizen } from "@/lib/webrizen";
+import { ssoConfigured, webrizen } from "@/lib/webrizen";
 
 export type Viewer = { user: User; isAdmin: boolean };
 
@@ -21,6 +21,8 @@ function adminEmails() {
  * visit and keeps name/email in sync with Webrizen SSO.
  */
 export const getViewer = cache(async (): Promise<Viewer | null> => {
+  // Without SSO credentials nobody can be signed in (local API-only development).
+  if (!ssoConfigured()) return null;
   const session = await webrizen().getSession();
   if (!session) return null;
   const { id: ssoSub, email, name, image, emailVerified } = session.user;

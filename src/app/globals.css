@@ -1,6 +1,21 @@
-@import "tailwindcss";
+/* Untitled UI base: Tailwind, its token theme and React Aria variants. */
+@import "../styles/globals.css";
 /* Brand tokens are the single source of truth: brand/tokens.css */
 @import "../../brand/tokens.css";
+
+/*
+ * Fluid page container: full width up to 1536px, centred, fluid side padding.
+ * !important beats Tailwind's per-breakpoint max-widths, which (with Untitled
+ * UI's 320px/600px breakpoints) would squeeze phones to 320px.
+ */
+@utility container {
+  width: 100%;
+  max-width: 96rem !important;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+/* ------------------------------------------------------------------ brand */
 
 @theme inline {
   --color-night: var(--chronon-night);
@@ -20,24 +35,88 @@
   --color-comment: #6f7590;
   --color-card: #ffffff;
 
+  --font-body: var(--font-averia), var(--chronon-font-display);
   --font-display: var(--font-averia), var(--chronon-font-display);
   --font-mono: var(--font-martian), var(--chronon-font-mono);
+}
 
-  --radius-sm: var(--chronon-radius-sm);
-  --radius-md: var(--chronon-radius-md);
-  --radius-lg: var(--chronon-radius-lg);
+/*
+ * Untitled UI, re-skinned. Its components read Tailwind's `neutral` and its own
+ * `brand` scale, so tinting those two carries Chronon through every component.
+ */
+@theme {
+  /* Night → Paper, cool and slightly blue like the brand neutrals. */
+  --color-neutral-25: #fbfbff;
+  --color-neutral-50: #f7f7ff; /* Paper */
+  --color-neutral-100: #eeeef6;
+  --color-neutral-200: #dfe0ea;
+  --color-neutral-300: #c9ccd8; /* Mist */
+  --color-neutral-400: #9aa0b4; /* Mist 2 */
+  --color-neutral-500: #6a6f80; /* Slate */
+  --color-neutral-600: #4a4e5e;
+  --color-neutral-700: #3d4152;
+  --color-neutral-800: #2a2f42; /* Line dark */
+  --color-neutral-900: #1a1e2e; /* Night 2 */
+  --color-neutral-950: #0f1220; /* Night */
+
+  /* Photon. */
+  --color-brand-25: #fff8f6;
+  --color-brand-50: #fdf1ee;
+  --color-brand-100: #fbe1da;
+  --color-brand-200: #f6c2b5;
+  --color-brand-300: #ee9c88;
+  --color-brand-400: #e67d64;
+  --color-brand-500: #de6449;
+  --color-brand-600: #c84f35;
+  --color-brand-700: #a63e28;
+  --color-brand-800: #842f1f;
+  --color-brand-900: #5e2216;
+  --color-brand-950: #2a0f08;
+
+  /* Photon is the action colour; Ion carries links and focus. */
+  --color-bg-brand-solid: var(--color-brand-500);
+  --color-bg-brand-solid_hover: var(--color-brand-400);
+  --color-text-brand-secondary: #5b45c9;
+  --color-text-brand-secondary_hover: #4a36ae;
+  --color-fg-brand-secondary: #5b45c9;
+  --color-fg-brand-secondary_alt: #5b45c9;
+  --color-fg-brand-secondary_hover: #4a36ae;
+  --color-focus-ring: #5b45c9;
+  --outline-color-brand: #5b45c9;
+  --color-border-secondary: var(--chronon-line-light);
+
+  /* Spectrum for prism light: brand-led, used only as light, never as fill. */
+  --prism-1: #de6449;
+  --prism-2: #f0a35e;
+  --prism-3: #f3d97a;
+  --prism-4: #7fd1b9;
+  --prism-5: #6fa8f5;
+  --prism-6: #5b45c9;
+  --prism-7: #b6a2f2;
 }
 
 @layer base {
+  .dark-mode {
+    --color-bg-brand-solid: var(--color-brand-500);
+    --color-bg-brand-solid_hover: var(--color-brand-400);
+    --color-text-brand-secondary: #b6a2f2;
+    --color-text-brand-secondary_hover: #d3c7f8;
+    --color-fg-brand-secondary: #b6a2f2;
+    --color-fg-brand-secondary_alt: #b6a2f2;
+    --color-focus-ring: #b6a2f2;
+    --outline-color-brand: #b6a2f2;
+    --color-border-secondary: var(--chronon-line-dark);
+  }
+
   html {
     color-scheme: light;
+    scrollbar-color: rgb(127 127 140 / 0.45) transparent;
     -webkit-text-size-adjust: 100%;
   }
   body {
     background: var(--chronon-paper);
     color: var(--chronon-night);
-    font-family: var(--font-display);
-    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-body);
   }
   a {
     text-decoration-color: var(--chronon-photon);
@@ -48,8 +127,7 @@
     color: var(--chronon-night);
   }
   :focus-visible {
-    outline: 2px solid var(--chronon-ion);
-    outline-offset: 2px;
+    outline-color: var(--color-focus-ring);
   }
 }
 
@@ -62,68 +140,12 @@
     text-transform: uppercase;
   }
 
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    white-space: nowrap;
-    border-radius: var(--chronon-radius-sm);
-    padding: 8px 14px;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.3;
-    text-decoration: none;
-    transition:
-      background-color 120ms,
-      border-color 120ms,
-      color 120ms;
-    cursor: pointer;
-  }
-  .btn:disabled {
-    opacity: 0.55;
-    cursor: not-allowed;
-  }
-  /* Photon: one primary action per view. */
-  .btn-photon {
-    background: var(--chronon-photon);
-    color: var(--chronon-night);
-  }
-  .btn-photon:hover {
-    background: #e57a62;
-  }
-  .btn-outline {
-    border: 1px solid var(--chronon-line-light);
-    background: var(--color-card);
-    color: var(--chronon-night);
-  }
-  .btn-outline:hover {
-    border-color: var(--chronon-night);
-  }
-  .btn-outline-dark {
-    border: 1px solid var(--chronon-line-dark);
-    color: var(--chronon-paper);
-  }
-  .btn-outline-dark:hover {
-    border-color: var(--chronon-mist-2);
-  }
-
-  .input {
-    width: 100%;
-    border-radius: var(--chronon-radius-sm);
-    border: 1px solid var(--chronon-line-light);
-    background: var(--color-card);
-    padding: 8px 12px;
-    font-size: 16px;
-    color: var(--chronon-night);
-  }
-  .input:focus {
-    outline: 2px solid var(--chronon-ion);
-    outline-offset: -1px;
-    border-color: transparent;
-  }
-
   /* Dark code block: Night ground, Line-dark border. */
+  .dark-mode {
+    scrollbar-color: rgb(255 255 255 / 0.16) transparent;
+    scrollbar-width: thin;
+  }
+
   .code-dark {
     background: var(--chronon-night);
     border: 1px solid var(--chronon-line-dark);
@@ -133,6 +155,295 @@
     font-size: 13px;
     line-height: 1.9;
     overflow-x: auto;
+  }
+}
+
+@layer components {
+  /* ------------------------------------------------------------------ lattice */
+
+  /*
+   * The page sits on a hairline lattice: two vertical rails frame the content
+   * column, every section is closed by a full-bleed rule, and a "+" registration
+   * mark sits where they cross. Content cells inside a `.cells` grid are divided
+   * by the same hairline (a 1px gap over the line colour).
+   */
+  .lattice {
+    --line: var(--chronon-line-light);
+    position: relative;
+    border-bottom: 1px solid var(--line);
+    /* The "+" marks sit 6px outside the rails; on phones that's off-screen. */
+    overflow-x: clip;
+  }
+  .lattice.dark-mode,
+  .dark-mode .lattice {
+    --line: var(--chronon-line-dark);
+  }
+  .lattice > .rails {
+    position: relative;
+    margin-inline: auto;
+    max-width: 1240px;
+    border-inline: 1px solid var(--line);
+  }
+  /* Registration marks at the four corners of each section. */
+  .lattice > .rails::before,
+  .lattice > .rails::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    width: 11px;
+    height: 11px;
+    z-index: 2;
+    background:
+      linear-gradient(var(--mark, var(--line)), var(--mark, var(--line))) center / 1px 100% no-repeat,
+      linear-gradient(var(--mark, var(--line)), var(--mark, var(--line))) center / 100% 1px no-repeat;
+    pointer-events: none;
+  }
+  .lattice > .rails::before {
+    left: -6px;
+  }
+  .lattice > .rails::after {
+    right: -6px;
+  }
+
+  .cells {
+    display: grid;
+    gap: 1px;
+    background: var(--line, var(--chronon-line-light));
+  }
+  .cells > * {
+    background: var(--cell-bg, var(--chronon-paper));
+  }
+  .dark-mode .cells > *,
+  .cells.dark-mode > * {
+    --cell-bg: var(--chronon-night);
+  }
+
+  /* Section heading row: mono index + title, separated from content by a rule. */
+  .section-head {
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* ------------------------------------------------------------------ prism light */
+
+  /*
+   * [data-prism] surfaces get --px/--py from the pointer (see Ambient): a soft
+   * spectral glow follows the cursor on hover. Off for reduced motion.
+   */
+  [data-prism] {
+    position: relative;
+    isolation: isolate;
+    --px: 50%;
+    --py: 50%;
+  }
+  [data-prism]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 300ms ease;
+    background: radial-gradient(
+      420px circle at var(--px) var(--py),
+      color-mix(in oklab, var(--prism-2) 22%, transparent),
+      color-mix(in oklab, var(--prism-5) 14%, transparent) 35%,
+      color-mix(in oklab, var(--prism-6) 8%, transparent) 55%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+  [data-prism]:hover::before,
+  [data-prism]:focus-within::before {
+    opacity: 1;
+  }
+  .dark-mode [data-prism]::before,
+  [data-prism].dark-mode::before {
+    background: radial-gradient(
+      460px circle at var(--px) var(--py),
+      color-mix(in oklab, var(--prism-1) 20%, transparent),
+      color-mix(in oklab, var(--prism-5) 14%, transparent) 40%,
+      color-mix(in oklab, var(--prism-6) 12%, transparent) 60%,
+      transparent 75%
+    );
+  }
+
+  /* A refracted hairline whose spectrum slowly sweeps along it. */
+  .spectrum-rule {
+    height: 1px;
+    /* Starts and ends on the same colour so it tiles; the mask fades the ends. */
+    background: linear-gradient(
+      90deg,
+      var(--prism-1),
+      var(--prism-2),
+      var(--prism-3),
+      var(--prism-4),
+      var(--prism-5),
+      var(--prism-6),
+      var(--prism-7),
+      var(--prism-1)
+    );
+    background-size: 50% 100%;
+    background-repeat: repeat-x;
+    animation: spectrum-sweep 14s linear infinite;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+  }
+
+  @keyframes spectrum-sweep {
+    to {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Reveal on scroll (see Reveal). */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 700ms ease,
+      transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  [data-reveal][data-shown] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* The mark turns clockwise, very slowly. */
+  @keyframes chronon-turn {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .mark-turn {
+    animation: chronon-turn 120s linear infinite;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mark-turn,
+    .spectrum-rule {
+      animation: none;
+    }
+    [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    [data-prism]::before {
+      transition: none;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ night landing */
+
+@layer components {
+  /* Frosted glass panel for dark surfaces. */
+  .glass {
+    border-radius: 20px;
+    border: 1px solid rgb(255 255 255 / 0.08);
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.055), rgb(255 255 255 / 0.015));
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.06),
+      0 30px 80px -30px rgb(0 0 0 / 0.7);
+  }
+
+  /* The mark's glow. */
+  .mark-glow {
+    filter: drop-shadow(0 0 28px rgb(222 100 73 / 0.35)) drop-shadow(0 0 60px rgb(91 69 201 / 0.35));
+  }
+}
+
+/* ------------------------------------------------------------------ cinematic landing */
+
+@layer components {
+  /* Editorial mono caption. */
+  .caption {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /*
+   * Light-leak cards: each card carries its own film leak (.leak-1 … .leak-6),
+   * blurred and screened, which drifts toward the pointer (--nx/--ny from Ambient).
+   */
+  .leak-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 22px;
+    border: 1px solid rgb(255 255 255 / 0.09);
+    background: #090c16;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06);
+    transition:
+      border-color 400ms ease,
+      transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .leak-card:hover {
+    border-color: rgb(255 255 255 / 0.18);
+    transform: translateY(-3px);
+  }
+  .leak-card > .leak {
+    position: absolute;
+    inset: -25%;
+    z-index: -2;
+    /* Radial gradients are soft already: no blur filter or blend mode to repaint. */
+    opacity: 0.85;
+    will-change: transform;
+    transform: translate(calc((var(--nx, 0.5) - 0.5) * 14%), calc((var(--ny, 0.5) - 0.5) * 14%)) scale(1);
+    transition:
+      transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1),
+      opacity 500ms ease;
+  }
+  .leak-card:hover > .leak {
+    opacity: 1;
+    transform: translate(calc((var(--nx, 0.5) - 0.5) * 22%), calc((var(--ny, 0.5) - 0.5) * 22%)) scale(1.06);
+  }
+  /* Scrim keeps text legible over the leak. */
+  .leak-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, transparent 30%, rgb(9 12 22 / 0.78) 62%, #090c16 92%);
+  }
+  .leak-1 {
+    background: radial-gradient(ellipse 38% 30% at 30% 34%, #fff1d6 0%, #ffb067 22%, #e86a3a 42%, transparent 70%);
+  }
+  .leak-2 {
+    background:
+      radial-gradient(ellipse 26% 22% at 56% 14%, #f4fbff 0%, #8fc8ff 30%, transparent 70%),
+      radial-gradient(ellipse 22% 18% at 44% 46%, #cfe4ff 0%, #4b7bd8 38%, transparent 72%);
+  }
+  .leak-3 {
+    background:
+      linear-gradient(125deg, transparent 32%, rgb(255 74 42 / 0.75) 50%, rgb(255 166 74 / 0.8) 58%, transparent 78%),
+      radial-gradient(ellipse 40% 34% at 90% 8%, #ff3d1f 0%, transparent 70%);
+  }
+  .leak-4 {
+    background:
+      radial-gradient(ellipse 42% 34% at 26% 18%, #ff3a22 0%, rgb(255 58 34 / 0.4) 40%, transparent 72%),
+      radial-gradient(ellipse 34% 36% at 72% 16%, #ffd08a 0%, #a9b84a 36%, transparent 72%);
+  }
+  .leak-5 {
+    background:
+      radial-gradient(ellipse 13% 58% at 34% 22%, #ff6a2a 0%, transparent 72%),
+      radial-gradient(ellipse 11% 52% at 56% 18%, #ffcf7a 0%, #ff8a3d 30%, transparent 74%),
+      radial-gradient(ellipse 15% 48% at 76% 24%, #ff4a2a 0%, transparent 72%);
+  }
+  .leak-6 {
+    background:
+      radial-gradient(ellipse 16% 60% at 12% 40%, #ffb347 0%, #e8702a 40%, transparent 72%),
+      radial-gradient(ellipse 14% 50% at 94% 46%, #ff9a3d 0%, transparent 70%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .leak-card,
+    .leak-card > .leak {
+      transition: none;
+    }
   }
 }
 
@@ -253,21 +564,4 @@
 .prose hr {
   border-color: var(--chronon-line-light);
   margin: 2.5em 0;
-}
-
-/* ------------------------------------------------------------------ motion */
-
-/* The mark turns clockwise, very slowly. */
-@keyframes chronon-turn {
-  to {
-    transform: rotate(360deg);
-  }
-}
-.mark-turn {
-  animation: chronon-turn 120s linear infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .mark-turn {
-    animation: none;
-  }
 }

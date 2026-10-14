@@ -1,5 +1,8 @@
 import { regionFiles } from "./data";
+import { dietSatisfies, normalize } from "./match";
 import { regionFileSchema, type DishData, type DishQuery, type RegionFile } from "./schema";
+
+export { dietSatisfies, normalize };
 
 export type RegionRef = { slug: string; name: string; country_code: string };
 export type Dish = DishData & { region: RegionRef };
@@ -11,11 +14,6 @@ export type Catalog = {
   regionBySlug: Map<string, Region>;
   dishBySlug: Map<string, Dish>;
 };
-
-/** Lowercase and strip accents so "tiramisu" finds "Tiramisù". */
-export function normalize(s: string) {
-  return s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
-}
 
 /** Validates the raw files and indexes them. Throws on invalid or duplicate data. */
 export function buildCatalog(files: unknown[]): Catalog {
@@ -78,22 +76,6 @@ export function filterDishes(catalog: Catalog, f: DishFilter): Dish[] {
     }
     return true;
   });
-}
-
-/**
- * A diet filter matches dishes that suit that diet: asking for "vegetarian"
- * also returns vegan dishes, "pescatarian" returns vegan and vegetarian ones too.
- */
-const suits: Record<DishData["diet"], DishData["diet"][]> = {
-  vegan: ["vegan"],
-  vegetarian: ["vegan", "vegetarian"],
-  eggetarian: ["vegan", "vegetarian", "eggetarian"],
-  pescatarian: ["vegan", "vegetarian", "eggetarian", "pescatarian"],
-  non_vegetarian: ["non_vegetarian"],
-};
-
-export function dietSatisfies(dishDiet: DishData["diet"], wanted: DishData["diet"]) {
-  return suits[wanted].includes(dishDiet);
 }
 
 export function pickRandom<T>(items: T[], count: number, random = Math.random): T[] {

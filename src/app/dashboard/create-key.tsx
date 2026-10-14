@@ -1,30 +1,31 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { Key01, Plus } from "@untitledui/icons";
+import { useActionState } from "react";
+import { Button } from "@/components/base/buttons/button";
+import { Input } from "@/components/base/input/input";
+import { CopyButton } from "@/components/copy-button";
 import { createKeyAction, type CreateKeyState } from "./actions";
 
 export function CreateKey({ disabled, disabledReason }: { disabled: boolean; disabledReason?: string }) {
   const [state, action, pending] = useActionState<CreateKeyState, FormData>(createKeyAction, { status: "idle" });
-  const [copied, setCopied] = useState(false);
 
   return (
     <div className="flex flex-col gap-4">
-      <form action={action} className="flex flex-col gap-3 sm:flex-row">
-        <label className="sr-only" htmlFor="key-name">
-          Key name
-        </label>
-        <input
-          id="key-name"
+      <form action={action} className="flex flex-col gap-3 sm:flex-row sm:items-start">
+        <Input
           name="name"
-          className="input sm:max-w-[320px]"
+          aria-label="Key name"
           placeholder="Name, e.g. recipe-app-prod"
+          icon={Key01}
           maxLength={48}
-          disabled={disabled || pending}
+          isDisabled={disabled || pending}
           autoComplete="off"
+          className="sm:w-[340px]"
         />
-        <button type="submit" className="btn btn-photon" disabled={disabled || pending}>
-          {pending ? "Creating…" : "Create key"}
-        </button>
+        <Button type="submit" color="primary" size="md" iconLeading={Plus} isDisabled={disabled} isLoading={pending} showTextWhileLoading>
+          Create key
+        </Button>
       </form>
       {disabled && disabledReason && <p className="text-[16px] text-slate">{disabledReason}</p>}
       {state.status === "error" && (
@@ -33,24 +34,14 @@ export function CreateKey({ disabled, disabledReason }: { disabled: boolean; dis
         </p>
       )}
       {state.status === "created" && (
-        <div className="flex flex-col gap-3 rounded-md border border-line-dark bg-night p-5 text-paper" role="status">
+        <div data-prism className="dark-mode flex flex-col gap-3 rounded-xl border border-line-dark bg-night p-5 text-paper" role="status">
           <p className="label text-ion-soft">New key · {state.name}</p>
-          <p className="text-[17px] text-mist">Copy it now. For your security we can&apos;t show it again.</p>
+          <p className="text-[17px] text-mist">Copy it now. We only store a hash, so it can&apos;t be shown again.</p>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-            <code className="min-w-0 flex-1 rounded border border-line-dark bg-night-2 px-3 py-2 font-mono text-[13px] break-all text-paper">
+            <code className="min-w-0 flex-1 rounded-lg border border-line-dark bg-night-2 px-3 py-2.5 font-mono text-[13px] break-all text-paper">
               {state.token}
             </code>
-            <button
-              type="button"
-              className="btn btn-outline-dark"
-              onClick={() => {
-                void navigator.clipboard.writeText(state.token);
-                setCopied(true);
-                setTimeout(() => setCopied(false), 2000);
-              }}
-            >
-              {copied ? "Copied" : "Copy key"}
-            </button>
+            <CopyButton text={state.token} label="Copy key" className="self-start px-3 py-2 text-[12px] sm:self-auto" />
           </div>
         </div>
       )}

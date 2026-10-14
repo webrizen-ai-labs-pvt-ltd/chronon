@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Averia_Libre, Martian_Mono } from "next/font/google";
+import { Ambient } from "@/components/ambient";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { site } from "@/lib/site";
+import { Providers } from "./providers";
 import "./globals.css";
 
 const averia = Averia_Libre({
@@ -33,7 +36,14 @@ export const viewport: Viewport = { themeColor: "#0F1220" };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${averia.variable} ${martian.variable}`}>
-      <body className="min-h-dvh">{children}</body>
+      <body className="min-h-dvh">
+        <noscript>
+          <style>{"[data-reveal]{opacity:1;transform:none}"}</style>
+        </noscript>
+        <Providers>{children}</Providers>
+        <Ambient />
+        <SmoothScroll />
+      </body>
     </html>
   );
 }

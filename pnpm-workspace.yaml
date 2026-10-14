@@ -6,3 +6,5 @@ allowBuilds:
   esbuild: true
   sharp: true
   unrs-resolver: false
+minimumReleaseAgeExclude:
+  - '@webrizen/sso@0.1.0'

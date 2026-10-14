@@ -91,7 +91,13 @@ src/
     dashboard/         key management and admin
     docs/              documentation pages (MDX)
   apis/menus/          regional menus: schema, JSON data per region, query logic
-  components/          brand mark, header/footer, docs UI
+  components/
+    base/, application/, foundations/   Untitled UI React components (copied in, MIT)
+    landing/           overlay nav, code tabs, live data explorer
+    vfx/               WebGL shader canvas and scenes
+    lattice.tsx        hairline section layout used across pages
+    ambient.tsx        scroll/pointer-driven light effects
+  styles/              Untitled UI base theme (re-skinned in app/globals.css)
   lib/
     api/               withApiKey(), error format, query parsing
     db/                Drizzle schema and queries
@@ -108,13 +114,29 @@ tests/                 Vitest suites
 Vercel (Hobby) + Neon Postgres + Upstash Redis, all on free tiers. Step by step:
 [`src/app/docs/deployment/page.mdx`](src/app/docs/deployment/page.mdx).
 
-> **Note:** the Webrizen SSO client is vendored in `src/lib/webrizen-sso/` until `@webrizen/sso` is published to
-> npm. After that, delete the folder and depend on the package instead.
 
-## Brand
+## Brand & UI
 
 The logo, colours and type come from [`brand/`](brand/README.md). `brand/tokens.css` is imported directly by
 the app's stylesheet, so it stays the single source of truth for colours, fonts and radii.
+
+UI components are [Untitled UI React](https://www.untitledui.com/react) (MIT), added with
+`npx untitledui@latest add <name>` and committed to `src/components/`. `src/app/globals.css` re-skins them for
+Chronon: Tailwind's `neutral` scale runs Paper → Night, the `brand` scale is Photon, and links and focus rings
+use Ion. Wrap a section in `.dark-mode` and the components switch to their Night variants.
+
+Page-level styles live in `globals.css`; the scroll and pointer effects are driven by `src/components/ambient.tsx`:
+
+- **Landing VFX:** five hand-written WebGL fragment shaders in `src/components/vfx/scenes.ts`, rendered by
+  `ShaderCanvas` (only while on screen, capped pixel ratio, a still frame under reduced motion, CSS gradient
+  fallback): light converging into a line (hero; pointer speed adds energy via `u_energy`/`u_flow`), a stippled
+  colonnade, a swirling portal, and grainy pastel dunes (footer). Section images live in `src/lib/landing.ts`.
+  Page scrolling is smoothed with Lenis (`src/components/smooth-scroll.tsx`). Feature cards use CSS film light leaks (`.leak-card`), and the page
+  carries a film grain (`.film-grain`).
+- **Lattice (docs, dashboard):** sections sit between hairline rails with "+" registration marks; `.cells` grids
+  divide content with the same 1px line.
+- **Prism light:** any element with `data-prism` picks up a spectral glow and rim that follow the pointer;
+  `.spectrum-rule` hairlines sweep with scroll. All of it is off under `prefers-reduced-motion`.
 
 ## Contributing
 

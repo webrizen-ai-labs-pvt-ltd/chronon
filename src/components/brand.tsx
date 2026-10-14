@@ -52,11 +52,11 @@ export function Logo({ tag, size = 26, className }: { tag?: string; size?: numbe
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       <ChrononMark size={size} />
-      <span className="font-display font-bold tracking-[-0.05em]" style={{ fontSize: size * 0.85, lineHeight: 1 }}>
+      <span className="font-display font-bold tracking-tighter" style={{ fontSize: size * 0.85, lineHeight: 1 }}>
         chronon
       </span>
       {tag && (
-        <span className="rounded border border-line-dark px-1.5 py-0.5 font-mono text-[11px] text-mist-2">{tag}</span>
+        <span className="rounded-full border border-line-dark px-1.5 py-0.5 font-mono text-[10px] text-mist-2">{tag}</span>
       )}
     </span>
   );
