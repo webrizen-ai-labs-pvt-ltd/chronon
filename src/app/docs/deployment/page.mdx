@@ -15,9 +15,11 @@ DATABASE_URL="postgres://…-pooler…/neondb?sslmode=require" pnpm db:migrate
 
 ## 2. Rate limits: Upstash Redis
 
-Serverless functions don't share memory, so counters live in Redis. Create a free database on
-[Upstash](https://upstash.com) and copy its REST URL and token. Without them, each instance counts on its own and the
-limits become much looser.
+Serverless functions don't share memory, so counters live in Redis. In Vercel go to **Storage → Create Database →
+Upstash for Redis** (free plan) and connect it to the project; it injects `KV_REST_API_URL` and `KV_REST_API_TOKEN`,
+which Chronon reads. Without Redis, each instance counts on its own and the limits become much looser.
+
+Neon can be added from **Storage** the same way; it injects `DATABASE_URL`.
 
 ## 3. Sign-in: Webrizen SSO
 
@@ -33,11 +35,11 @@ Import the repository into Vercel (framework: Next.js) and set these environment
 | Variable | Value |
 | --- | --- |
 | `APP_URL` | `https://<your-domain>`, no trailing slash |
-| `DATABASE_URL` | Neon pooled URL |
+| `DATABASE_URL` | Injected by the Neon integration (pooled) |
 | `WEBRIZEN_SSO_ISSUER` | `https://accounts.webrizen.com/api/auth` |
 | `WEBRIZEN_SSO_CLIENT_ID` / `WEBRIZEN_SSO_CLIENT_SECRET` | From step 3 |
 | `WEBRIZEN_SSO_SESSION_SECRET` | 32+ random characters: `openssl rand -base64 32` |
-| `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` | From step 2 |
+| `KV_REST_API_URL` / `KV_REST_API_TOKEN` | Injected by the Upstash integration |
 | `CHRONON_ADMIN_EMAILS` | Comma-separated admin emails |
 | `NEXT_PUBLIC_REPO_URL` | Link to the public repository |
 

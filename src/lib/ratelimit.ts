@@ -96,8 +96,9 @@ const globalForLimits = globalThis as unknown as { chrononLimitStore?: LimitStor
 
 export function getLimitStore(): LimitStore {
   if (!globalForLimits.chrononLimitStore) {
-    const url = process.env.UPSTASH_REDIS_REST_URL;
-    const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+    // The Vercel Marketplace's Upstash integration injects KV_REST_API_*; a direct Upstash setup uses UPSTASH_*.
+    const url = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
+    const token = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
     if (url && token) {
       globalForLimits.chrononLimitStore = createRedisStore(new Redis({ url, token }));
     } else {
