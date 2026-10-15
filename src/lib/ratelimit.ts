@@ -19,6 +19,10 @@ export interface LimitStore {
   incrementMonth(id: string, month: string): Promise<number>;
   /** Reads calendar-month counters (0 when missing). */
   readMonth(ids: string[], month: string): Promise<number[]>;
+  /** Increments a free-form statistics counter that expires after `ttlSeconds`. */
+  bump(key: string, ttlSeconds: number): Promise<void>;
+  /** Reads statistics counters (0 when missing). */
+  readCounters(keys: string[]): Promise<number[]>;
 }
 
 const MONTH_TTL_SECONDS = 40 * 24 * 60 * 60;
@@ -58,12 +62,23 @@ export function createRedisStore(redis: Redis): LimitStore {
       const values = await redis.mget<(number | string | null)[]>(...ids.map((id) => `chronon:usage:${month}:${id}`));
       return values.map((v) => Number(v ?? 0));
     },
+    async bump(key, ttlSeconds) {
+      const k = `chronon:stat:${key}`;
+      const n = await redis.incr(k);
+      if (n === 1) await redis.expire(k, ttlSeconds);
+    },
+    async readCounters(keys) {
+      if (keys.length === 0) return [];
+      const values = await redis.mget<(number | string | null)[]>(...keys.map((k) => `chronon:stat:${k}`));
+      return values.map((v) => Number(v ?? 0));
+    },
   };
 }
 
 export function createMemoryStore(now: () => number = Date.now): LimitStore {
   const hits = new Map<string, number[]>();
   const months = new Map<string, number>();
+  const stats = new Map<string, number>();
   return {
     kind: "memory",
     async hit(bucket, id, limit, windowMs) {
@@ -88,6 +103,12 @@ export function createMemoryStore(now: () => number = Date.now): LimitStore {
     },
     async readMonth(ids, month) {
       return ids.map((id) => months.get(`${month}:${id}`) ?? 0);
+    },
+    async bump(key) {
+      stats.set(key, (stats.get(key) ?? 0) + 1);
+    },
+    async readCounters(keys) {
+      return keys.map((k) => stats.get(k) ?? 0);
     },
   };
 }

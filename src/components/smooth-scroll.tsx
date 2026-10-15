@@ -9,13 +9,16 @@ import { useEffect, useRef } from "react";
  * Fluid, inertial page scrolling (Lenis). It drives the native scroll position,
  * so sticky elements, scroll listeners and IntersectionObservers keep working.
  * Honours prefers-reduced-motion; inner scroll areas can opt out with
- * `data-lenis-prevent`.
+ * `data-lenis-prevent`. Off in the admin console, where tables and panels want
+ * plain, immediate scrolling.
  */
 export function SmoothScroll() {
   const lenis = useRef<Lenis | null>(null);
   const pathname = usePathname();
+  const enabled = !pathname.startsWith("/dashboard/admin");
 
   useEffect(() => {
+    if (!enabled) return;
     const instance = new Lenis({
       autoRaf: true,
       // Responsive but silky: high enough to track the wheel, low enough to glide.
@@ -31,7 +34,7 @@ export function SmoothScroll() {
       instance.destroy();
       lenis.current = null;
     };
-  }, []);
+  }, [enabled]);
 
   // New page: start at the top without easing through the old one.
   useEffect(() => {

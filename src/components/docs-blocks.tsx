@@ -4,7 +4,8 @@ import { apiBase } from "@/lib/site";
 
 /** Larger intro paragraph under a page title. */
 export function Lead({ children }: { children: React.ReactNode }) {
-  return <p className="text-[22px] leading-[1.4] text-pretty text-ink-2">{children}</p>;
+  // A div: MDX wraps the children in their own <p>, and <p> can't nest.
+  return <div className="text-[22px] leading-[1.4] text-pretty text-ink-2 [&_p]:m-0">{children}</div>;
 }
 
 export function Callout({ title, tone = "note", children }: { title?: string; tone?: "note" | "warn"; children: React.ReactNode }) {

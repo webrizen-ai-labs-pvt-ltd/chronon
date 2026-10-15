@@ -10,6 +10,7 @@ export type ErrorCode =
   | "too_many_failed_attempts"
   | "invalid_request"
   | "not_found"
+  | "gone"
   | "internal_error";
 
 const docsFor: Partial<Record<ErrorCode, string>> = {
@@ -26,7 +27,7 @@ export const CORS_HEADERS = {
   "Access-Control-Allow-Methods": "GET, OPTIONS",
   "Access-Control-Allow-Headers": "Authorization, X-API-Key, Content-Type",
   "Access-Control-Expose-Headers":
-    "X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Quota-Limit, X-Quota-Remaining, X-Quota-Reset, Retry-After",
+    "X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Quota-Limit, X-Quota-Remaining, X-Quota-Reset, Retry-After, Deprecation, Link",
   "Access-Control-Max-Age": "86400",
 };
 

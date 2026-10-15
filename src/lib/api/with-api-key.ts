@@ -38,7 +38,7 @@ function presentedKey(req: NextRequest) {
 }
 
 /** Runs `task` after the response is sent (falls back to fire-and-forget outside a request). */
-function defer(task: () => Promise<unknown>) {
+export function defer(task: () => Promise<unknown>) {
   const safe = () => task().catch((err) => console.error("[chronon] deferred task failed", err));
   try {
     after(safe);
