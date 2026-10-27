@@ -29,7 +29,7 @@
     "@untitledui/icons": "^0.0.23",
     "@upstash/ratelimit": "^2.0.6",
     "@upstash/redis": "^1.35.3",
-    "@webrizen/sso": "^0.1.0",
+    "@webrizen/sso": "^2.0.0",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.45.3",
     "lenis": "^1.3.26",

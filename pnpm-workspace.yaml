@@ -7,4 +7,4 @@ allowBuilds:
   sharp: true
   unrs-resolver: false
 minimumReleaseAgeExclude:
-  - '@webrizen/sso@0.1.0'
+  - '@webrizen/sso@0.1.0 || 2.0.0'

@@ -27,8 +27,8 @@ importers:
         specifier: ^1.35.3
         version: 1.39.0
       '@webrizen/sso':
-        specifier: ^0.1.0
-        version: 0.1.0(next@16.3.7(@babel/core@7.29.7)(@types/node@24.19.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))
+        specifier: ^2.0.0
+        version: 2.0.0(next@16.3.7(@babel/core@7.29.7)(@types/node@24.19.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1650,8 +1650,8 @@ packages:
   '@vitest/utils@3.2.7':
     resolution: {integrity: sha512-x6BDOd7dyo3PFLY3I9/HJ25X/6OurhGXk2/B9gOZNPF7XDVjeBK4k01lQE5uvDpbuheErh91qYuE1E2OEjK3Rw==}
 
-  '@webrizen/sso@0.1.0':
-    resolution: {integrity: sha512-v833YKNDxBsaJU0oawhRiRl1Io7gDSRoow9+eEjm3XlCHiPqgqhcqqSd/vPpflKagnwdrPeeIyfzpBlcMHQzvQ==}
+  '@webrizen/sso@2.0.0':
+    resolution: {integrity: sha512-NtsdhqJ72PTMzrD4aZEhM2RJ+GAdLDgxumiyOQZq8thkGN9ZnvQF98v8UFdFZFd5cDFrNXuO18bMVv2aQJCoWw==}
     engines: {node: '>=20'}
     peerDependencies:
       next: '>=15'
@@ -5067,7 +5067,7 @@ snapshots:
       loupe: 3.2.1
       tinyrainbow: 2.0.0
 
-  '@webrizen/sso@0.1.0(next@16.3.7(@babel/core@7.29.7)(@types/node@24.19.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))':
+  '@webrizen/sso@2.0.0(next@16.3.7(@babel/core@7.29.7)(@types/node@24.19.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))':
     dependencies:
       jose: 6.2.12
       openid-client: 6.8.8

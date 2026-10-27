@@ -7,22 +7,7 @@ import { ssoConfigured, webrizen } from "@/lib/webrizen";
 
 export type Viewer = { user: User; isAdmin: boolean };
 
-/**
- * Claims from the ID token Webrizen SSO issued at sign-in. The token was
- * verified by the SDK at login and lives in our encrypted session cookie, so
- * its payload can be read directly.
- */
-function idTokenClaims(idToken: string | undefined): Record<string, unknown> {
-  const payload = idToken?.split(".")[1];
-  if (!payload) return {};
-  try {
-    return JSON.parse(Buffer.from(payload, "base64url").toString("utf8"));
-  } catch {
-    return {};
-  }
-}
-
-/** Emergency fallback only; platform admins come from the SSO `platform_admin` claim. */
+/** Emergency fallback only; platform admins come from Webrizen (session.isPlatformAdmin). */
 function adminEmails() {
   return new Set(
     (process.env.CHRONON_ADMIN_EMAILS ?? "")
@@ -42,7 +27,7 @@ export const getViewer = cache(async (): Promise<Viewer | null> => {
   const session = await webrizen().getSession();
   if (!session) return null;
   const { id: ssoSub, email, name, image, emailVerified } = session.user;
-  const platformAdmin = idTokenClaims(session.idToken).platform_admin === true;
+  const platformAdmin = session.isPlatformAdmin;
   const profile = { email, name: name || null, image, lastSeenAt: new Date() };
   const [user] = await getDb()
     .insert(users)
